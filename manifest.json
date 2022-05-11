@@ -1,0 +1,14 @@
+{
+  "name": "Demo Extension",
+  "description": "Explore the basic components of browser extensions",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "options.html",
+  "permissions": ["storage", "activeTab", "scripting"]
+}
