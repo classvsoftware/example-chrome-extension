@@ -7,10 +7,10 @@
     "service_worker": "background.js"
   },
   "action": {
-    "default_popup": "popup/popup.html"
+    "default_popup": "components/popup/popup.html"
   },
-  "options_page": "options/options.html",
-  "devtools_page": "devtools/devtools.html",
+  "options_page": "components/options/options.html",
+  "devtools_page": "components/devtools/devtools.html",
   "permissions": ["storage", "activeTab", "scripting"],
   "icons": {
     "16": "icons/codesearch_16x16.png",

@@ -7,13 +7,21 @@
     <script src="/scripts/bootstrap.js"></script>
     <link href="/styles/bootstrap.css" rel="stylesheet" />
     <link href="/styles/fontawesome/css/all.min.css" rel="stylesheet" />
-    <link href="devtools_sidebar.css" rel="stylesheet" />
+    <link href="/styles/shared.css" rel="stylesheet" />
+
+    <link href="chrome-tutorial.css" rel="stylesheet" />
   </head>
-  <body>
-    <div class="flex justify-center items-center h-screen">
-      This is the devtools sidebar page.
+  <body class="p-4">
+    <div class="flex flex-col justify-center items-center h-screen">
+      <button id="changeColor"></button>
+
+      <div id="buttonDiv"></div>
+
+      <div>
+        <p>Choose a different background color!</p>
+      </div>
     </div>
 
-    <script src="devtools_sidebar.js"></script>
+    <script src="chrome-tutorial.js"></script>
   </body>
 </html>
