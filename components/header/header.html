@@ -1,4 +1,4 @@
-<div class="dropdown pb-4">
+<div id="header">
   <button
     class="btn btn-primary dropdown-toggle"
     id="dropdownMenuButton1"
@@ -8,24 +8,40 @@
     Select demo:
   </button>
 
+  <button class="btn btn-secondary" id="reload">&#8634;</button>
+
   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
     <li>
-      <a class="dropdown-item" href="/components/url-analyzer/url-analyzer.html"
-        >Inspect URL</a
+      <a
+        class="dropdown-item"
+        href="/components/url-analyzer/url-analyzer.html"
       >
+        <div>Inspect Extension URL</div>
+        <small class="text-gray-500"
+          >Understand how extension URLs are constructed</small
+        >
+      </a>
     </li>
     <li>
       <a
         class="dropdown-item"
         href="/components/chrome-tutorial/chrome-tutorial.html"
-        >Set Page Background Color</a
       >
+        <div>Set Page Background Color</div>
+        <small class="text-gray-500"
+          >Use the WebExtension Storage API and content scripts to modify
+          webpages</small
+        >
+      </a>
     </li>
     <li>
       <a
         class="dropdown-item"
         href="/components/chrome-tutorial/chrome-tutorial.html"
-        >Modify Toolbar Icon</a
+        ><div>Modify Toolbar Icon</div>
+        <small class="text-gray-500"
+          >Programmatically change the extension's toolbar icon</small
+        ></a
       >
     </li>
   </ul>

@@ -1,6 +1,6 @@
-import { insertHeader } from "/scripts/shared.js";
+import { initializeBoilerplate } from "/scripts/shared.js";
 
-insertHeader();
+initializeBoilerplate();
 
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";
@@ -21,6 +21,8 @@ function handleButtonClick(event) {
   let color = event.target.dataset.color;
   event.target.classList.add(selectedClassName);
   chrome.storage.sync.set({ color });
+
+  window.location.reload();
 }
 
 // Add a button to the page for each supplied color
@@ -31,7 +33,7 @@ function constructOptions(buttonColors) {
     for (let buttonColor of buttonColors) {
       // …create a button with that color…
       let button = document.createElement("button");
-      button.innerText = "color";
+      button.innerText = "";
       button.dataset.color = buttonColor;
       button.style.backgroundColor = buttonColor;
 
@@ -49,12 +51,6 @@ function constructOptions(buttonColors) {
 
 // Initialize the page by constructing the color options
 constructOptions(presetButtonColors);
-
-function showContent() {
-  var temp = document.getElementsByTagName("template")[0];
-  var clon = temp.content.cloneNode(true);
-  document.body.appendChild(clon);
-}
 
 // Initialize button with user's preferred color
 let changeColor = document.getElementById("changeColor");

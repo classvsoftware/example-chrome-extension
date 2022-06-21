@@ -1,4 +1,4 @@
-button {
+.example-wrapper button {
     height: 30px;
     width: 30px;
     outline: none;
@@ -7,7 +7,7 @@ button {
     border-radius: 2px;
   }
   
-  button.current {
+.example-wrapper  button.current {
     box-shadow: 0 0 0 2px white,
                 0 0 0 4px black;
   }

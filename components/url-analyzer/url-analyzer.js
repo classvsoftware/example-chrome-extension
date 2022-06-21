@@ -1,6 +1,6 @@
-import { insertHeader } from "/scripts/shared.js";
+import { initializeBoilerplate } from "/scripts/shared.js";
 
-insertHeader();
+initializeBoilerplate();
 
 document.querySelector("#url").value = window.location.href;
 document.querySelector("#protocol").value = window.location.protocol;
