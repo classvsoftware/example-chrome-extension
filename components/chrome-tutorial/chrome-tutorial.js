@@ -1,4 +1,4 @@
-import { initializeBoilerplate } from "/scripts/shared.js";
+import { browser, initializeBoilerplate } from "/scripts/shared.js";
 
 initializeBoilerplate();
 
@@ -20,14 +20,14 @@ function handleButtonClick(event) {
   // Mark the button as selected
   let color = event.target.dataset.color;
   event.target.classList.add(selectedClassName);
-  chrome.storage.sync.set({ color });
+  browser.storage.sync.set({ color });
 
   window.location.reload();
 }
 
 // Add a button to the page for each supplied color
 function constructOptions(buttonColors) {
-  chrome.storage.sync.get("color", (data) => {
+  browser.storage.sync.get("color", (data) => {
     let currentColor = data.color;
     // For each color we were provided…
     for (let buttonColor of buttonColors) {
@@ -55,15 +55,15 @@ constructOptions(presetButtonColors);
 // Initialize button with user's preferred color
 let changeColor = document.getElementById("changeColor");
 
-chrome.storage.sync.get("color", ({ color }) => {
+browser.storage.sync.get("color", ({ color }) => {
   changeColor.style.backgroundColor = color;
 });
 
 // When the button is clicked, inject setPageBackgroundColor into current page
 changeColor.addEventListener("click", async () => {
-  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  let [tab] = await browser.tabs.query({ active: true, currentWindow: true });
 
-  chrome.scripting.executeScript({
+  browser.scripting.executeScript({
     target: { tabId: tab.id },
     function: setPageBackgroundColor,
   });
@@ -72,7 +72,7 @@ changeColor.addEventListener("click", async () => {
 // The body of this function will be executed as a content script inside the
 // current page
 function setPageBackgroundColor() {
-  chrome.storage.sync.get("color", ({ color }) => {
+  browser.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = color;
   });
 }
