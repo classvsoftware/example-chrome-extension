@@ -1,5 +1,5 @@
 body {
-    min-width: 800px;
+    min-width: 720px;
     min-height: max(100vh, 600px);
     display: grid;
     grid-template-rows: auto 1fr auto;
