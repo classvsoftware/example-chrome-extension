@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="/scripts/tailwind.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <link href="/styles/bootstrap.css" rel="stylesheet" />
+    <link href="/styles/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/styles/shared.css" rel="stylesheet" />
+
+    <link href="modify-toolbar-icon.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="flex flex-col justify-start items-stretch gap-4">
+      Modify the toolbar icon
+
+      <div>
+        <div class="input-group">
+          <input
+            id="tooltip"
+            type="text"
+            class="form-control"
+            autocomplete="off"
+            placeholder="Tooltip text"
+          />
+          <button id="tooltip-btn" class="btn btn-primary">UPDATE</button>
+        </div>
+
+        <div class="form-text">
+          Update the tooltip text that appears when hovering over the
+          extension's toolbar icon.
+        </div>
+      </div>
+
+      <div>
+        <button id="toolbar-image" class="btn btn-primary">
+          Change Toolbar Icon
+        </button>
+        <div class="form-text">Update the extension's toolbar icon .</div>
+      </div>
+    </div>
+
+    <script src="modify-toolbar-icon.js" type="module"></script>
+  </body>
+</html>
