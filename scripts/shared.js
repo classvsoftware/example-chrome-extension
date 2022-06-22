@@ -53,7 +53,7 @@ export async function initializeBoilerplate() {
 
 let toastContainer = null;
 
-export function showToast({ title, body, subtitle = "" }) {
+export function showToast({ variant='bg-primary', body }) {
   if (!toastContainer) {
     toastContainer = document.createElement("div");
     toastContainer.classList.add(
@@ -75,21 +75,19 @@ export function showToast({ title, body, subtitle = "" }) {
   toastContainer.appendChild(toast);
 
   toast.innerHTML = `
-<div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-  <div class="toast-header">
-    <img src="/icons/codesearch_16x16.png" class="rounded mr-2" />
-    <strong class="mr-auto">${title}</strong>
-    <small>${subtitle}</small>
+<div class="toast text-white ${variant} border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+  <div class="flex flex-row justify-between items-center">
+    <div class="toast-body">${body}</div>
     <button
       type="button"
-      class="ml-2 mb-1 close"
-      data-dismiss="toast"
+      class="text-white text-4xl flex flex-col items-center justify-center"
+      data-bs-dismiss="toast"
       aria-label="Close"
     >
-      <span aria-hidden="true">&times;</span>
+      <span 
+      style="height:3rem; width:3rem"  >&times;</span>
     </button>
   </div>
-  <div class="toast-body">${body}</div>
 </div>
   `;
 

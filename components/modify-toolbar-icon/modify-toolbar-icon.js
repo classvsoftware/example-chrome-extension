@@ -14,7 +14,6 @@ document.querySelector("#toolbar-image").addEventListener("click", () => {
   const imageData = context.getImageData(0, 0, 16, 16);
   chrome.action.setIcon({ imageData: imageData }, () => {
     showToast({
-      title: "Updated Extension Icon",
       body: `Set tooltip icon to "${randomHexColor}"`,
     });
   });
@@ -29,8 +28,7 @@ document.querySelector("#tooltip-btn").addEventListener("click", () => {
     },
     () => {
       showToast({
-        title: "Updated Extension Tooltip",
-        body: `Set tooltip to "${title}"`,
+        body: `Set tooltip text to "${title}"`,
       });
     }
   );
