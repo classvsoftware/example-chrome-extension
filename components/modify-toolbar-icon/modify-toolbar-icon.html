@@ -13,8 +13,6 @@
   </head>
   <body>
     <div class="flex flex-col justify-start items-stretch gap-4">
-      Modify the toolbar icon
-
       <div>
         <div class="input-group">
           <input
@@ -24,7 +22,9 @@
             autocomplete="off"
             placeholder="Tooltip text"
           />
-          <button id="tooltip-btn" class="btn btn-primary">UPDATE</button>
+          <button id="tooltip-btn" class="btn btn-outline-primary">
+            Update tooltip text
+          </button>
         </div>
 
         <div class="form-text">
@@ -33,12 +33,38 @@
         </div>
       </div>
 
-      <div>
-        <button id="toolbar-image" class="btn btn-primary">
-          Change Toolbar Icon
-        </button>
-        <div class="form-text">Update the extension's toolbar icon .</div>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="flex flex-col items-stretch">
+          <button id="toolbar-image-random" class="btn btn-outline-primary">
+            Set icon to random color
+          </button>
+          <div class="form-text col-span-2">
+            Update the extension's toolbar icon to be a random color square.
+          </div>
+        </div>
+
+        <div class="input-group">
+          <input
+            id="icon-file-input"
+            accept="image/png, image/jpeg"
+            type="file"
+            class="form-control"
+            placeholder="Recipient's username"
+            aria-label="Recipient's username"
+            aria-describedby="button-addon2"
+          />
+          <button id="toolbar-image-file" class="btn btn-outline-primary">
+            Update icon
+          </button>
+          <div class="form-text col-span-2">
+            Update the extension's toolbar icon to the selected image file.
+          </div>
+        </div>
       </div>
+
+      <button id="toolbar-reset" class="btn btn-outline-primary">
+        Reset Toolbar
+      </button>
     </div>
 
     <script src="modify-toolbar-icon.js" type="module"></script>
