@@ -4,6 +4,6 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   padding: 1.5rem;
-  gap: 1.5rem !important;
-  overflow-y: scroll;
+  gap: 3rem !important;
+  overflow-y: auto;
 }

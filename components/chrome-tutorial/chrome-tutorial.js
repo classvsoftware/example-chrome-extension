@@ -1,6 +1,6 @@
 import { browser, initializeBoilerplate, showToast } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeBoilerplate({ title: "Set Page Background Color" });
 
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";
@@ -63,21 +63,24 @@ browser.storage.sync.get("color", ({ color }) => {
 changeColor.addEventListener("click", async () => {
   let [tab] = await browser.tabs.query({ active: true, currentWindow: true });
 
-  browser.scripting.executeScript({
-    target: { tabId: tab.id },
-    function: setPageBackgroundColor,
-  }, () => {
-    if (chrome.runtime.lastError) {
-      showToast({
-        variant: 'bg-danger',
-        body: `Failed to set background color: ${chrome.runtime.lastError.message}`,
-      });
-    } else {
-      showToast({
-        body: `Updated page background color`,
-      });
+  browser.scripting.executeScript(
+    {
+      target: { tabId: tab.id },
+      function: setPageBackgroundColor,
+    },
+    () => {
+      if (chrome.runtime.lastError) {
+        showToast({
+          variant: "bg-danger",
+          body: `Failed to set background color: ${chrome.runtime.lastError.message}`,
+        });
+      } else {
+        showToast({
+          body: `Updated page background color`,
+        });
+      }
     }
-  });
+  );
 });
 
 // The body of this function will be executed as a content script inside the

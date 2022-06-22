@@ -3,7 +3,7 @@ export const browser = chrome || browser;
 const githubPrefix =
   "https://github.com/msfrisbie/demo-browser-extension/tree/master/components";
 
-export async function initializeBoilerplate() {
+export async function initializeBoilerplate({ title = "" } = {}) {
   const headerWrapper = document.createElement("header");
   document.body.prepend(headerWrapper);
   headerWrapper.innerHTML = await fetch("/components/header/header.html").then(
@@ -46,6 +46,8 @@ export async function initializeBoilerplate() {
   ${sourceCodeLinkHtml}
 </div>`;
 
+  document.querySelector("#page-title").innerText = title;
+
   document.querySelector("#reload").addEventListener("click", () => {
     window.location.reload();
   });
@@ -53,7 +55,7 @@ export async function initializeBoilerplate() {
 
 let toastContainer = null;
 
-export function showToast({ variant='bg-primary', body }) {
+export function showToast({ variant = "bg-primary", body }) {
   if (!toastContainer) {
     toastContainer = document.createElement("div");
     toastContainer.classList.add(

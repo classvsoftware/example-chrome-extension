@@ -1,3 +1,3 @@
 import { initializeBoilerplate } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeBoilerplate({ title: "Default Popup Page" });

@@ -1,64 +1,68 @@
-<div id="header">
-  <button
-    class="btn btn-primary dropdown-toggle"
-    id="dropdownMenuButton1"
-    data-bs-toggle="dropdown"
-    aria-expanded="false"
-  >
-    Select demo
-  </button>
+<div id="header" class="flex flex-row justify-between">
+  <div>
+    <button
+      class="btn btn-primary dropdown-toggle"
+      id="dropdownMenuButton1"
+      data-bs-toggle="dropdown"
+      aria-expanded="false"
+    >
+      Select demo
+    </button>
 
-  <button
-    class="btn btn-secondary"
-    id="reload"
-    data-toggle="tooltip"
-    data-placement="right"
-    title="Reload this extension page"
-  >
-    &#8634;
-  </button>
+    <button
+      class="btn btn-secondary"
+      id="reload"
+      data-toggle="tooltip"
+      data-placement="right"
+      title="Reload this extension page"
+    >
+      &#8634;
+    </button>
 
-  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-    <li>
-      <a class="dropdown-item" href="/components/welcome/welcome.html">
-        <div>Welcome Page</div>
-        <small class="text-gray-500"
-          >Welcome to the Browser Extension Explorer!</small
+    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+      <li>
+        <a class="dropdown-item" href="/components/welcome/welcome.html">
+          <div>Welcome Page</div>
+          <small class="text-gray-500"
+            >Welcome to the Browser Extension Explorer!</small
+          >
+        </a>
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          href="/components/url-analyzer/url-analyzer.html"
         >
-      </a>
-    </li>
-    <li>
-      <a
-        class="dropdown-item"
-        href="/components/url-analyzer/url-analyzer.html"
-      >
-        <div>Inspect Extension URL</div>
-        <small class="text-gray-500"
-          >Understand how extension URLs are constructed</small
+          <div>Inspect Extension URL</div>
+          <small class="text-gray-500"
+            >Understand how extension URLs are constructed</small
+          >
+        </a>
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          href="/components/chrome-tutorial/chrome-tutorial.html"
         >
-      </a>
-    </li>
-    <li>
-      <a
-        class="dropdown-item"
-        href="/components/chrome-tutorial/chrome-tutorial.html"
-      >
-        <div>Set Page Background Color</div>
-        <small class="text-gray-500"
-          >Use the WebExtension Storage API and content scripts to modify
-          webpages</small
+          <div>Set Page Background Color</div>
+          <small class="text-gray-500"
+            >Use the WebExtension Storage API and content scripts to modify
+            webpages</small
+          >
+        </a>
+      </li>
+      <li>
+        <a
+          class="dropdown-item"
+          href="/components/modify-toolbar-icon/modify-toolbar-icon.html"
+          ><div>Modify Toolbar Icon</div>
+          <small class="text-gray-500"
+            >Programmatically change the extension's toolbar icon</small
+          ></a
         >
-      </a>
-    </li>
-    <li>
-      <a
-        class="dropdown-item"
-        href="/components/modify-toolbar-icon/modify-toolbar-icon.html"
-        ><div>Modify Toolbar Icon</div>
-        <small class="text-gray-500"
-          >Programmatically change the extension's toolbar icon</small
-        ></a
-      >
-    </li>
-  </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div id="page-title" class="text-2xl text-gray-400"></div>
 </div>
