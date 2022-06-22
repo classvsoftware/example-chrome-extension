@@ -17,6 +17,21 @@ document.querySelector("#tooltip-btn").addEventListener("click", () => {
   );
 });
 
+document.querySelector("#badge-text-btn").addEventListener("click", () => {
+  const text = document.querySelector("#badge").value;
+
+  chrome.action.setBadgeText(
+    {
+      text,
+    },
+    () => {
+      showToast({
+        body: `Set badge text to "${text}"`,
+      });
+    }
+  );
+});
+
 document
   .querySelector("#toolbar-image-random")
   .addEventListener("click", () => {
@@ -32,6 +47,19 @@ document
     chrome.action.setIcon({ imageData: imageData }, () => {
       showToast({
         body: `Set toolbar icon to "${randomHexColor}"`,
+      });
+    });
+  });
+
+document
+  .querySelector("#toolbar-badge-random")
+  .addEventListener("click", () => {
+    const randomHexColor =
+      "#" + Math.floor(Math.random() * 16777215).toString(16);
+
+    chrome.action.setBadgeBackgroundColor({ color: randomHexColor }, () => {
+      showToast({
+        body: `Set badge color to "${randomHexColor}"`,
       });
     });
   });
@@ -68,24 +96,32 @@ document.querySelector("#toolbar-image-file").addEventListener("click", () => {
     };
 
     img.src = URL.createObjectURL(file);
+  } else {
+    showToast({
+      variant: "bg-danger",
+      body: `No image selected`,
+    });
   }
 });
 
 document.querySelector("#toolbar-reset").addEventListener("click", () => {
-  chrome.action.setIcon({ path: "/icons/codesearch_16x16.png" }, () => {
-    showToast({
-      body: `Reset toolbar icon`,
-    });
+  showToast({
+    body: `Reset toolbar icon`,
   });
+
+  chrome.action.setIcon({ path: "/icons/codesearch_16x16.png" }, () => {});
 
   chrome.action.setTitle(
     {
       title: "Browser Extension Explorer",
     },
-    () => {
-      showToast({
-        body: `Reset tooltip text`,
-      });
-    }
+    () => {}
+  );
+
+  chrome.action.setBadgeText(
+    {
+      text: "",
+    },
+    () => {}
   );
 });

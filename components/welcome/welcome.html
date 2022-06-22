@@ -3,21 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/scripts/tailwind.js"></script>
-    <script src="/scripts/bootstrap.js"></script>
-    <link href="/styles/bootstrap.css" rel="stylesheet" />
-    <link href="/styles/fontawesome/css/all.min.css" rel="stylesheet" />
-    <link href="/styles/shared.css" rel="stylesheet" />
+    <script src="/scripts/assets.js"></script>
 
     <link href="options.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="flex flex-col justify-start items-stretch gap-4">
+    <div class="grid auto-rows-min gap-8 text-lg">
       <h1 class="text-4xl">Welcome to the Browser Extension Explorer!</h1>
 
-      <p class="text-lg">
+      <p>
         This extension is a collection of open source examples demonstrating how
         the various parts of browser extensions work.
+      </p>
+
+      <p>
+        In order to make the source code easy to understand, it intentionally
+        uses <strong>zero</strong> automated build tools. This means you can
+        clone this project and immediately load the extension into your browser
+        as-is.
       </p>
 
       <a

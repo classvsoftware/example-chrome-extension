@@ -3,16 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/scripts/tailwind.js"></script>
-    <script src="/scripts/bootstrap.js"></script>
-    <link href="/styles/bootstrap.css" rel="stylesheet" />
-    <link href="/styles/fontawesome/css/all.min.css" rel="stylesheet" />
-    <link href="/styles/shared.css" rel="stylesheet" />
+    <script src="/scripts/assets.js"></script>
 
     <link href="chrome-tutorial.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="flex flex-col justify-start items-center example-wrapper">
+    <div class="grid auto-rows-min place-items-center gap-8 example-wrapper">
       <div>
         <p>
           This example is based off the
@@ -27,7 +23,7 @@
 
       <div id="buttonDiv"></div>
 
-      <button id="changeColor" style="width: 100px">Update color</button>
+      <button id="changeColor" style="width: 120px">Update color</button>
     </div>
 
     <script src="chrome-tutorial.js" type="module"></script>
