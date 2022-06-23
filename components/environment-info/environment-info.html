@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="/scripts/tailwind.js"></script>
+    <script src="/scripts/bootstrap.js"></script>
+    <link href="/styles/bootstrap.css" rel="stylesheet" />
+    <link href="/styles/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/styles/shared.css" rel="stylesheet" />
+
+    <link href="environment-info.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div class="grid auto-rows-min place-items-stretch gap-8">
+      <div class="card">
+        <pre class="card-header">browser.runtime.getManifest()</pre>
+        <div class="card-body">
+          <pre class="card-text text-xs" id="manifest"></pre>
+        </div>
+      </div>
+
+      <div class="card">
+        <pre class="card-header">browser.runtime.getPackageDirectoryEntry()</pre>
+        <div class="card-body">
+          <pre class="card-text text-xs" id="package-directory"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="environment-info.js" type="module"></script>
+  </body>
+</html>
