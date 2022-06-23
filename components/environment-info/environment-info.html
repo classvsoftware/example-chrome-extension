@@ -15,6 +15,13 @@
   <body>
     <div class="grid auto-rows-min place-items-stretch gap-8">
       <div class="card">
+        <pre class="card-header">browser.runtime.getURL()</pre>
+        <div class="card-body">
+          <pre class="card-text text-xs" id="url"></pre>
+        </div>
+      </div>
+
+      <div class="card">
         <pre class="card-header">browser.runtime.getManifest()</pre>
         <div class="card-body">
           <pre class="card-text text-xs" id="manifest"></pre>
@@ -25,15 +32,6 @@
         <pre class="card-header">browser.runtime.getPlatformInfo()</pre>
         <div class="card-body">
           <pre class="card-text text-xs" id="platform-info"></pre>
-        </div>
-      </div>
-
-      <div class="card">
-        <pre class="card-header">
-browser.runtime.getPackageDirectoryEntry()</pre
-        >
-        <div class="card-body">
-          <pre class="card-text text-xs" id="package-directory"></pre>
         </div>
       </div>
     </div>
