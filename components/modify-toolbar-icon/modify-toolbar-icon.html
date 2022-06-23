@@ -13,7 +13,7 @@
     <link href="modify-toolbar-icon.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="grid grid-cols-2 gap-8">
+    <div class="grid gap-8">
       <div>
         <div class="input-group">
           <input
@@ -41,7 +41,7 @@
         >
           Set icon to random color
         </button>
-        <div class="form-text col-span-2">
+        <div class="form-text">
           Update the extension's toolbar icon to be a random color square.
         </div>
       </div>
@@ -61,7 +61,7 @@
             Update icon
           </button>
         </div>
-        <div class="form-text col-span-2">
+        <div class="form-text">
           Update the extension's toolbar icon to the selected image file.
         </div>
       </div>
@@ -92,16 +92,14 @@
         >
           Set badge to random color
         </button>
-        <div class="form-text col-span-2">
+        <div class="form-text">
           Update the extension's badge to be a random color.
         </div>
       </div>
 
-      <div class="col-span-2">
-        <button id="toolbar-reset" class="w-full btn btn-outline-primary">
-          Reset Toolbar
-        </button>
-      </div>
+      <button id="toolbar-reset" class="w-full btn btn-outline-primary">
+        Reset Toolbar
+      </button>
     </div>
 
     <script src="modify-toolbar-icon.js" type="module"></script>
