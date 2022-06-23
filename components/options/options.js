@@ -1,3 +1,13 @@
-import { initializeBoilerplate } from "/scripts/shared.js";
+import { browser, initializeBoilerplate } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "Default Options Page" });
+initializeBoilerplate({ title: "Options Page" });
+
+document.querySelector("#open-options-api").addEventListener("click", () => {
+  browser.runtime.openOptionsPage();
+});
+
+document
+  .querySelector("#open-options-window-open")
+  .addEventListener("click", () => {
+    window.open("/components/options/options.html");
+  });

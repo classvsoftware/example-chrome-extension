@@ -13,12 +13,19 @@
     <link href="popup.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="grid auto-rows-min place-items-center gap-8">
-      <div>This is the popup page.</div>
-
-      <div>
-        You can open and close it using the keyboard shortcut Ctrl+Shift+F.
+    <div class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl">
+      <div class="text-center">
+        You can open and close the popup page using the keyboard shortcut
+        Ctrl+Shift+F.
       </div>
+
+      <button id="popup-default" class="btn btn-outline-primary">
+        Set default popup page to Popup Page
+      </button>
+
+      <button id="welcome-default" class="btn btn-outline-primary">
+        Set default popup page to Welcome Page
+      </button>
     </div>
 
     <script src="popup.js" type="module"></script>

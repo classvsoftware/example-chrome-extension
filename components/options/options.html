@@ -13,8 +13,23 @@
     <link href="options.css" rel="stylesheet" />
   </head>
   <body>
-    <div class="flex flex-col justify-start items-stretch gap-4">
-      <div>This is the options page.</div>
+    <div class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl">
+      <button class="btn btn-outline-primary" id="open-options-api">
+        browser.runtime.openOptionsPage()
+      </button>
+
+      <a
+        class="btn btn-outline-primary"
+        href="/components/options/options.html"
+        target="blank"
+        id="open-options-href"
+      >
+        Open with anchor href
+      </a>
+
+      <button class="btn btn-outline-primary" id="open-options-window-open">
+        Open with window.open()
+      </button>
     </div>
 
     <script src="options.js" type="module"></script>

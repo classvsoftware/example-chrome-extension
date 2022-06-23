@@ -11,6 +11,7 @@ export async function initializeBoilerplate({ title = "" } = {}) {
   );
 
   const footerWrapper = document.createElement("footer");
+  footerWrapper.className = "flex flex-row items-end justify-start";
   document.body.appendChild(footerWrapper);
 
   const demoName = window.location.pathname
