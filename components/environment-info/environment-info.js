@@ -9,10 +9,19 @@ document.querySelector("#manifest").innerText = JSON.stringify(
 );
 
 browser.runtime.getPackageDirectoryEntry((directoryEntry) => {
-  debugger;
   document.querySelector("#package-directory").innerText = JSON.stringify(
-    directoryEntry.name,
+    directoryEntry,
     null,
     2
   );
 });
+
+browser.runtime.getPlatformInfo((info) => {
+  document.querySelector("#platform-info").innerText = JSON.stringify(
+    info,
+    null,
+    2
+  );
+});
+
+//   https://developer.chrome.com/docs/extensions/reference/runtime/#method-getPlatformInfo
