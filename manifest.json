@@ -1,8 +1,9 @@
 {
-  "name": "Browser Extension Explorer",
-  "description": "Explore the basic components of browser extensions",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
   "version": "1.0.1",
   "manifest_version": 3,
+  "default_locale": "en",
   "background": {
     "service_worker": "background.js",
     "type": "module"
@@ -28,20 +29,20 @@
         "default": "Ctrl+Shift+F",
         "mac": "MacCtrl+Shift+F"
       },
-      "description": "Opens popup.html"
+      "description": "__MSG_actionDescription__"
     },
     "foobar": {
       "suggested_key": {
         "default": "Ctrl+Shift+J",
         "mac": "MacCtrl+Shift+J"
       },
-      "description": "Runs 'foobar' on the current page"
+      "description": "__MSG_customCommandDescription__"
     }
   },
   "chrome_settings_overrides": {
     "homepage": "https://www.buildingbrowserextensions.com",
     "search_provider": {
-      "name": "Brave Search Engine",
+      "name": "__MSG_searchEngineName__",
       "search_url": "https://search.brave.com/search?q={searchTerms}",
       "encoding": "UTF-8",
       "is_default": true

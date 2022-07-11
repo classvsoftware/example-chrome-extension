@@ -1,0 +1,17 @@
+{
+    "extName": {
+        "message": "Browser Extension Explorer"
+    },
+    "extDescription": {
+        "message": "Browser Extension Explorer"
+    },
+    "actionDescription": {
+        "message": "Opens popup.html"
+    },
+    "customCommandDescription": {
+        "message": "Runs 'foobar' on the current page"
+    },
+    "searchEngineName": {
+        "message": "Brave Search Engine"
+    }
+}
