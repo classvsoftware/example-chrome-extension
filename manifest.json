@@ -10,7 +10,10 @@
   "action": {
     "default_popup": "components/popup/popup.html"
   },
-  "options_page": "components/options/options.html",
+  "options_ui": {
+    "open_in_tab": true,
+    "page": "components/options/options.html"
+  },
   "devtools_page": "components/devtools/devtools.html",
   "permissions": ["storage", "activeTab", "scripting"],
   "icons": {
@@ -26,6 +29,23 @@
         "mac": "MacCtrl+Shift+F"
       },
       "description": "Opens popup.html"
+    },
+    "foobar": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+J",
+        "mac": "MacCtrl+Shift+J"
+      },
+      "description": "Runs 'foobar' on the current page"
     }
+  },
+  "chrome_settings_overrides": {
+    "homepage": "https://www.buildingbrowserextensions.com",
+    "search_provider": {
+      "name": "Brave Search Engine",
+      "search_url": "https://search.brave.com/search?q={searchTerms}",
+      "encoding": "UTF-8",
+      "is_default": true
+    },
+    "startup_pages": ["https://www.buildingbrowserextensions.com"]
   }
 }
