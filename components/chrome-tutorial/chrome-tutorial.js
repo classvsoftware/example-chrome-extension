@@ -1,4 +1,4 @@
-import { browser, initializeBoilerplate, showToast } from "/scripts/shared.js";
+import { initializeBoilerplate, showToast } from "/scripts/shared.js";
 
 initializeBoilerplate({ title: "Set Page Background Color" });
 
@@ -20,14 +20,14 @@ function handleButtonClick(event) {
   // Mark the button as selected
   let color = event.target.dataset.color;
   event.target.classList.add(selectedClassName);
-  browser.storage.sync.set({ color });
+  chrome.storage.sync.set({ color });
 
   window.location.reload();
 }
 
 // Add a button to the page for each supplied color
 function constructOptions(buttonColors) {
-  browser.storage.sync.get("color", (data) => {
+  chrome.storage.sync.get("color", (data) => {
     let currentColor = data.color;
     // For each color we were provided…
     for (let buttonColor of buttonColors) {
@@ -55,15 +55,15 @@ constructOptions(presetButtonColors);
 // Initialize button with user's preferred color
 let changeColor = document.getElementById("changeColor");
 
-browser.storage.sync.get("color", ({ color }) => {
+chrome.storage.sync.get("color", ({ color }) => {
   changeColor.style.backgroundColor = color;
 });
 
 // When the button is clicked, inject setPageBackgroundColor into current page
 changeColor.addEventListener("click", async () => {
-  let [tab] = await browser.tabs.query({ active: true, currentWindow: true });
+  let [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
 
-  browser.scripting.executeScript(
+  chrome.scripting.executeScript(
     {
       target: { tabId: tab.id },
       function: setPageBackgroundColor,
@@ -88,7 +88,7 @@ changeColor.addEventListener("click", async () => {
 function setPageBackgroundColor() {
   var browser = browser || chrome;
 
-  browser.storage.sync.get("color", ({ color }) => {
+  chrome.storage.sync.get("color", ({ color }) => {
     document.body.style.backgroundColor = color;
   });
 }

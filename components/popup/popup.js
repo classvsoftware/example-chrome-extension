@@ -1,10 +1,10 @@
-import { browser, initializeBoilerplate, showToast } from "/scripts/shared.js";
+import { initializeBoilerplate, showToast } from "/scripts/shared.js";
 
 initializeBoilerplate({ title: "Popup Page" });
 
 document.querySelector("#popup-default").addEventListener("click", () => {
-  browser.action.setPopup({
-    popup: browser.runtime.getURL("/components/popup/popup.html"),
+  chrome.action.setPopup({
+    popup: chrome.runtime.getURL("/components/popup/popup.html"),
   });
 
   showToast({
@@ -13,8 +13,8 @@ document.querySelector("#popup-default").addEventListener("click", () => {
 });
 
 document.querySelector("#welcome-default").addEventListener("click", () => {
-  browser.action.setPopup({
-    popup: browser.runtime.getURL("/components/welcome/welcome.html"),
+  chrome.action.setPopup({
+    popup: chrome.runtime.getURL("/components/welcome/welcome.html"),
   });
 
   showToast({

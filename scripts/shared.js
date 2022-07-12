@@ -1,5 +1,3 @@
-export const browser = chrome || browser;
-
 const githubPrefix =
   "https://github.com/msfrisbie/demo-browser-extension/tree/master/components";
 

@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/scripts/tailwind.js"></script>
-    <script src="/scripts/bootstrap.js"></script>
-    <link href="/styles/bootstrap.css" rel="stylesheet" />
-    <link href="/styles/fontawesome/css/all.min.css" rel="stylesheet" />
+    <script src="/scripts/vendor/tailwind.js"></script>
+    <script src="/scripts/vendor/bootstrap.js"></script>
+    <link href="/styles/vendor/bootstrap.css" rel="stylesheet" />
+    <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="/styles/shared.css" rel="stylesheet" />
 
     <link href="environment-info.css" rel="stylesheet" />
@@ -15,21 +15,21 @@
   <body>
     <div class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl">
       <div class="card">
-        <pre class="card-header">browser.runtime.getURL()</pre>
+        <pre class="card-header">chrome.runtime.getURL()</pre>
         <div class="card-body">
           <pre class="card-text text-xs" id="url"></pre>
         </div>
       </div>
 
       <div class="card">
-        <pre class="card-header">browser.runtime.getManifest()</pre>
+        <pre class="card-header">chrome.runtime.getManifest()</pre>
         <div class="card-body">
           <pre class="card-text text-xs" id="manifest"></pre>
         </div>
       </div>
 
       <div class="card">
-        <pre class="card-header">browser.runtime.getPlatformInfo()</pre>
+        <pre class="card-header">chrome.runtime.getPlatformInfo()</pre>
         <div class="card-body">
           <pre class="card-text text-xs" id="platform-info"></pre>
         </div>

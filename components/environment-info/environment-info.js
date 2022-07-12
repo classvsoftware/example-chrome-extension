@@ -1,16 +1,16 @@
-import { browser, initializeBoilerplate } from "/scripts/shared.js";
+import { initializeBoilerplate } from "/scripts/shared.js";
 
 initializeBoilerplate({ title: "Environment Info" });
 
-document.querySelector("#url").innerText = browser.runtime.getURL("");
+document.querySelector("#url").innerText = chrome.runtime.getURL("");
 
 document.querySelector("#manifest").innerText = JSON.stringify(
-  browser.runtime.getManifest(),
+  chrome.runtime.getManifest(),
   null,
   2
 );
 
-browser.runtime.getPlatformInfo((info) => {
+chrome.runtime.getPlatformInfo((info) => {
   document.querySelector("#platform-info").innerText = JSON.stringify(
     info,
     null,
