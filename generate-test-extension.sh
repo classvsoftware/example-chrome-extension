@@ -1,4 +1,4 @@
-rm -rf mvx?
+rm -rf mvx
 
 mkdir mvx
 
@@ -12,8 +12,8 @@ cat <<EOF >mvx/manifest.json
     "type": "module"
   },
   "action": {
-    "default_popup": "mvx/popup.html"
-  },
+    "default_popup": "popup.html"
+  }
 }
 EOF
 
