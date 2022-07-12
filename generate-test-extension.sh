@@ -1,3 +1,5 @@
+# Generate simple disposable test extension
+
 rm -rf mvx
 
 mkdir mvx
@@ -13,7 +15,14 @@ cat <<EOF >mvx/manifest.json
   },
   "action": {
     "default_popup": "popup.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": [],
+      "js": ["content-script.js"]
+    }
+  ],
 }
 EOF
 
@@ -33,4 +42,9 @@ console.log("Initialized background!");
 chrome.runtime.onInstalled.addListener((object) => {
     console.log("Installed background!");
 });
+EOF
+
+cat <<EOF >mvx/content-script.js
+
+console.log("Initialized content script!");
 EOF
