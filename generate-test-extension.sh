@@ -22,7 +22,7 @@ cat <<EOF >mvx/manifest.json
       "css": [],
       "js": ["content-script.js"]
     }
-  ],
+  ]
 }
 EOF
 
@@ -31,6 +31,8 @@ cat <<EOF >mvx/popup.html
 <html>
   <body>
     <h1>Popup</h1>
+
+    <script src="popup.js"></script>
   </body>
 </html>
 EOF
@@ -42,6 +44,11 @@ console.log("Initialized background!");
 chrome.runtime.onInstalled.addListener((object) => {
     console.log("Installed background!");
 });
+EOF
+
+cat <<EOF >mvx/popup.js
+
+console.log("Initialized popup.js!");
 EOF
 
 cat <<EOF >mvx/content-script.js
