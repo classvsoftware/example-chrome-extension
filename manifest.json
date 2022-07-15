@@ -23,8 +23,14 @@
     }
   ],
   "devtools_page": "components/devtools/devtools.html",
-  "host_permissions": [],
-  "permissions": ["alarms", "storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "alarms",
+    "storage",
+    "activeTab",
+    "scripting",
+    "declarativeNetRequest"
+  ],
   "icons": {
     "16": "icons/codesearch_16x16.png",
     "48": "icons/codesearch_48x48.png",
@@ -62,5 +68,14 @@
       "resources": ["/scripts/shared.js"],
       "matches": ["<all_urls>"]
     }
-  ]
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rulesets/ruleset_1.json"
+      }
+    ]
+  }
 }
