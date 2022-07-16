@@ -1,4 +1,8 @@
+// Welcome to the Browser Extension Explorer manifest!
+//
+// Comments are allowed in manifest.json files
 {
+  // __MSG messages are drawn from the _locales directory
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
   "version": "1.0.1",
@@ -6,20 +10,22 @@
   "default_locale": "en",
   "background": {
     "service_worker": "background.js",
-    "type": "module"
+    "type": "module" // Allows the use of `import`
   },
   "action": {
     "default_popup": "components/popup/popup.html"
   },
   "options_ui": {
-    "open_in_tab": true,
+    // If set to false, the options page opens in a
+    // modal in the browser's extension page
+    "open_in_tab": false,
     "page": "components/options/options.html"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["<all_urls>"], // Inject this on every page
       "css": [],
-      "js": ["scripts/content-scripts/keepalive.js"]
+      "js": ["scripts/content-scripts/main.js"]
     }
   ],
   "devtools_page": "components/devtools/devtools.html",
@@ -38,6 +44,7 @@
     "128": "icons/codesearch_128x128.png"
   },
   "commands": {
+    // Defines a shortcut to open the popup
     "_execute_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+F",
@@ -45,6 +52,7 @@
       },
       "description": "__MSG_actionDescription__"
     },
+    // Defines a custom command
     "foobar": {
       "suggested_key": {
         "default": "Ctrl+Shift+J",
@@ -63,6 +71,7 @@
     },
     "startup_pages": ["https://www.buildingbrowserextensions.com"]
   },
+  // Resources that can be referenced and loaded in content scripts
   "web_accessible_resources": [
     {
       "resources": ["/scripts/shared.js"],
