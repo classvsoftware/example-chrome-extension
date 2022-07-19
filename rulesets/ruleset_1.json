@@ -3,10 +3,13 @@
     "id": 1,
     "priority": 1,
     "action": {
-      "type": "block"
+      "type": "redirect",
+      "redirect": {
+        "url": "https://example.com"
+      }
     },
     "condition": {
-      "urlFilter": "httpbin.org/get"
+      "urlFilter": "httpbin.org/anything/static/redirectme"
     }
   }
 ]

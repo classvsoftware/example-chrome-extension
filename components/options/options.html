@@ -14,9 +14,19 @@
   </head>
   <body>
     <div class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl">
-      <button class="btn btn-outline-primary" id="open-options-api">
-        chrome.runtime.openOptionsPage()
-      </button>
+      <div class="form-group flex flex-col items-stretch">
+        <button class="btn btn-outline-primary" id="open-options-api">
+          chrome.runtime.openOptionsPage()
+        </button>
+
+        <div class="form-text">
+          Same as selecting `Options` from the toolbar right click menu. The
+          manifest has
+          <span class="font-monospace">options_ui.open_in_tab=false</span>, so
+          this method opens the options page in a modal in the browser extension
+          interface.
+        </div>
+      </div>
 
       <a
         class="btn btn-outline-primary"

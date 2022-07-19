@@ -19,13 +19,29 @@
         Ctrl+Shift+F.
       </div>
 
-      <button id="popup-default" class="btn btn-outline-primary">
-        Set default popup page to Popup Page
-      </button>
+      <div class="dropdown grid place-items-center">
+        <a
+          class="btn btn-outline-primary dropdown-toggle"
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Set default popup page to...
+        </a>
 
-      <button id="welcome-default" class="btn btn-outline-primary">
-        Set default popup page to Welcome Page
-      </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <li>
+            <button id="popup-default" class="dropdown-item">Popup Page</button>
+          </li>
+          <li>
+            <button id="welcome-default" class="dropdown-item">
+              Welcome Page
+            </button>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <script src="popup.js" type="module"></script>

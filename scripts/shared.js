@@ -55,6 +55,10 @@ export async function initializeBoilerplate({ title = "" } = {}) {
 let toastContainer = null;
 
 export function showToast({ variant = "bg-primary", body }) {
+  if (!body) {
+    throw new Error("Must provide body");
+  }
+
   if (!toastContainer) {
     toastContainer = document.createElement("div");
     toastContainer.classList.add(
@@ -97,4 +101,8 @@ export function showToast({ variant = "bg-primary", body }) {
   setTimeout(() => {
     toastContainer.removeChild(toast);
   }, 5000);
+}
+
+export async function activeTab() {
+  return chrome.tabs.query({ active: true, currentWindow: true });
 }

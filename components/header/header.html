@@ -10,14 +10,26 @@
     </button>
 
     <button
-      class="btn btn-secondary"
+      class="btn btn-outline-secondary"
       id="reload"
       data-toggle="tooltip"
       data-placement="right"
       title="Reload this extension page"
     >
-      &#8634;
+      <i class="fa-solid fa-arrow-rotate-left"></i>
     </button>
+
+    <a
+      href="#"
+      target="_blank"
+      class="btn btn-outline-secondary"
+      id="newtab"
+      data-toggle="tooltip"
+      data-placement="right"
+      title="Open this page in a new tab"
+    >
+      <i class="fa-solid fa-arrow-up-right-from-square"></i>
+    </a>
 
     <ul
       class="dropdown-menu"
@@ -92,7 +104,7 @@
           ></a
         >
       </li>
-      <li>
+      <!-- <li>
         <a
           class="dropdown-item"
           href="/components/inspect-background/inspect-background.html"
@@ -107,13 +119,21 @@
           ><div>Worker Status</div>
           <small class="text-gray-500">View the status of workers</small></a
         >
+      </li> -->
+      <li>
+        <a class="dropdown-item" href="/components/static-dnr/static-dnr.html"
+          ><div>Static Declarative Net Request</div>
+          <small class="text-gray-500"
+            >Experiment with static DNR rulesets</small
+          ></a
+        >
       </li>
       <li>
-        <a
-          class="dropdown-item"
-          href="/components/declarative-net-request/declarative-net-request.html"
-          ><div>Declarative Net Request</div>
-          <small class="text-gray-500">Experiment with DNR rulesets</small></a
+        <a class="dropdown-item" href="/components/dynamic-dnr/dynamic-dnr.html"
+          ><div>Dynamic Declarative Net Request</div>
+          <small class="text-gray-500"
+            >Experiment with dynamic DNR rules</small
+          ></a
         >
       </li>
     </ul>

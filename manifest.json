@@ -16,14 +16,13 @@
     "default_popup": "components/popup/popup.html"
   },
   "options_ui": {
-    // If set to false, the options page opens in a
-    // modal in the browser's extension page
+    // Options page opens in a modal instead of a new tab
     "open_in_tab": false,
     "page": "components/options/options.html"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"], // Inject this on every page
+      "matches": ["<all_urls>"], // Inject script on every page
       "css": [],
       "js": ["scripts/content-scripts/main.js"]
     }
@@ -84,6 +83,11 @@
         "id": "ruleset_1",
         "enabled": true,
         "path": "rulesets/ruleset_1.json"
+      },
+      {
+        "id": "ruleset_2",
+        "enabled": false,
+        "path": "rulesets/ruleset_2.json"
       }
     ]
   }

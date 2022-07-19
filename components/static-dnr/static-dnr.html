@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script src="/scripts/vendor/tailwind.js"></script>
+    <script src="/scripts/vendor/bootstrap.js"></script>
+    <link href="/styles/vendor/bootstrap.css" rel="stylesheet" />
+    <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
+    <link href="/styles/shared.css" rel="stylesheet" />
+
+    <link href="static-dnr.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div
+      class="grid grid-cols-2 auto-rows-min place-items-stretch gap-8 max-w-5xl"
+    >
+      <div class="flex flex-col items-stretch gap-8">
+        <div class="flex flex-col text-sm text-gray-400 gap-2">
+          <div>To use this tool:</div>
+          <ul class="list-decimal mx-4">
+            <li>
+              Open any valid webpage in a new tab (<a
+                class="text-blue-500"
+                target="_blank"
+                href="https://example.com"
+                >example</a
+              >)
+            </li>
+            <li>Open the developer tools and select the Network tab</li>
+            <li>Open the extension popup and select the Static DNR tool</li>
+          </ul>
+        </div>
+
+        <div class="form-group flex flex-col items-stretch">
+          <button
+            class="btn btn-outline-primary dropdown-toggle"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Select request...
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <button id="static-redirect" class="dropdown-item">
+                <div class="font-monospace">/static/redirect</div>
+                <small class="text-gray-500"
+                  >If ruleset_1 is enabled, this will be redirected.</small
+                >
+              </button>
+            </li>
+            <li>
+              <button id="static-block" class="dropdown-item">
+                <div class="font-monospace">/static/block</div>
+                <small class="text-gray-500"
+                  >If ruleset_2 is enabled, this will be blocked.</small
+                >
+              </button>
+            </li>
+          </ul>
+
+          <div class="form-text">
+            Dispatch an HTTP request in the browser's current active tab. Open
+            the developer tools network tab to view the result of the outgoing
+            request.
+            <span class="font-bold"
+              >Note: these requests may throw CORS errors, this is
+              expected</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group flex flex-col items-stretch">
+          <button id="toggle-ruleset" class="btn btn-outline-primary">
+            Toggle ruleset_2
+          </button>
+
+          <div class="form-text">
+            Add/remove ruleset_2 from the enabled rulesets
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Enabled Static Rulesets</div>
+        <div class="card-body">
+          <pre class="card-text text-xs" id="static-ruleset-container"></pre>
+        </div>
+      </div>
+    </div>
+
+    <script src="static-dnr.js" type="module"></script>
+  </body>
+</html>
