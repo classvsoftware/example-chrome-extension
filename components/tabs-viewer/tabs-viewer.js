@@ -75,11 +75,6 @@ chrome.tabs.onActivated.addListener(() => {
 
   updateWindowsAndTabs();
 });
-chrome.tabs.onActiveChanged.addListener(() => {
-  showToast({ body: `Tab active changed` });
-
-  updateWindowsAndTabs();
-});
 chrome.tabs.onAttached.addListener(() => {
   showToast({ body: `Tab attached` });
 
@@ -92,11 +87,6 @@ chrome.tabs.onCreated.addListener(() => {
 });
 chrome.tabs.onDetached.addListener(() => {
   showToast({ body: `Tab detached` });
-
-  updateWindowsAndTabs();
-});
-chrome.tabs.onHighlightChanged.addListener(() => {
-  showToast({ body: `Tab highlight changed` });
 
   updateWindowsAndTabs();
 });
@@ -117,11 +107,6 @@ chrome.tabs.onRemoved.addListener(() => {
 });
 chrome.tabs.onReplaced.addListener(() => {
   showToast({ body: `Tab replaced` });
-
-  updateWindowsAndTabs();
-});
-chrome.tabs.onSelectionChanged.addListener(() => {
-  showToast({ body: `Tab selection changed` });
 
   updateWindowsAndTabs();
 });
