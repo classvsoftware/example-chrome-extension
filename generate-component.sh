@@ -1,8 +1,16 @@
+set -e
+
 if [ -z "$1" ]
 then
       echo "Provide a name"
       exit 1
 fi
+
+TARGET="<!-- DBX_TARGET -->"
+
+HEADERTPL="<li><a class=\"dropdown-item\" href=\"\/components\/$1\/$1.html\"><div>$1<\/div><small class=\"text-gray-500\">$1<\/small><\/a><\/li>$TARGET"
+
+sed -i "s/$TARGET/$HEADERTPL/" components/header/header.html
 
 mkdir components/$1
 
