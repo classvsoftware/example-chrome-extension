@@ -62,7 +62,7 @@ export function showToast({ variant = "bg-primary", body }) {
   if (!toastContainer) {
     toastContainer = document.createElement("div");
     toastContainer.classList.add(
-      "absolute",
+      "fixed",
       "bottom-0",
       "right-0",
       "p-4",

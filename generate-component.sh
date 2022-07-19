@@ -24,6 +24,7 @@ cat <<EOF >components/$1/$1.html
 
     <script src="/scripts/vendor/tailwind.js"></script>
     <script src="/scripts/vendor/bootstrap.js"></script>
+    <script src="/scripts/vendor/lodash.js"></script>
     <link href="/styles/vendor/bootstrap.css" rel="stylesheet" />
     <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="/styles/shared.css" rel="stylesheet" />
