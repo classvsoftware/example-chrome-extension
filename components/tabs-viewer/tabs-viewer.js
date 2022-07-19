@@ -2,8 +2,47 @@ import { initializeBoilerplate, showToast } from "/scripts/shared.js";
 
 initializeBoilerplate({ title: "tabs-viewer" });
 
-let timer = null;
 const container = document.querySelector("#windows-container");
+
+const updateWindowsAndTabs = _.debounce(async function () {
+  const windows = await chrome.windows.getAll();
+
+  let html = "";
+
+  for (const w of windows) {
+    html += `
+      <div class="card ${w.focused ? "border-primary" : ""}">
+          <pre class="card-header">Window ${w.id}</pre>
+          
+          <div class="card-body">
+            <pre class="card-text text-xs">${JSON.stringify(w, null, 2)}</pre>
+          </div>
+      </div>`;
+
+    const tabs = await chrome.tabs.query({ windowId: w.id });
+
+    let tabHtml = "";
+
+    for (const t of tabs) {
+      tabHtml += `
+          <div class="card ${w.focused && t.active ? "border-primary" : ""}">
+              <pre class="card-header">Tab ${t.id}</pre>
+              
+              <div class="card-body">
+                <pre class="card-text text-xs">${JSON.stringify(
+                  t,
+                  null,
+                  2
+                )}</pre>
+              </div>
+          </div>`;
+    }
+
+    html += `<div class="flex flex-col items-stretch gap-8">${tabHtml}</div>`;
+  }
+
+  container.innerHTML = html;
+}, 100);
 
 // Initial
 updateWindowsAndTabs();
@@ -96,47 +135,3 @@ chrome.tabs.onZoomChange.addListener(() => {
 
   updateWindowsAndTabs();
 });
-
-async function updateWindowsAndTabs() {
-  if (timer != null) {
-    clearTimeout(timer);
-    timer = null;
-  }
-
-  // 100ms debounce
-  timer = setTimeout( () => {
-    const windows = await chrome.windows.getAll();
-
-    let html = "";
-  
-    for (const w of windows) {
-      html += `
-      <div class="card ${w.focused ? "border-primary" : ""}">
-          <pre class="card-header">Window ${w.id}</pre>
-          
-          <div class="card-body">
-            <pre class="card-text text-xs">${JSON.stringify(w, null, 2)}</pre>
-          </div>
-      </div>`;
-  
-      const tabs = await chrome.tabs.query({ windowId: w.id });
-  
-      let tabHtml = "";
-  
-      for (const t of tabs) {
-        tabHtml += `
-          <div class="card ${w.focused && t.active ? "border-primary" : ""}">
-              <pre class="card-header">Tab ${t.id}</pre>
-              
-              <div class="card-body">
-                <pre class="card-text text-xs">${JSON.stringify(t, null, 2)}</pre>
-              </div>
-          </div>`;
-      }
-  
-      html += `<div class="flex flex-col items-stretch gap-8">${tabHtml}</div>`;
-    }
-  
-    container.innerHTML = html;
-  }, 100);
-}
