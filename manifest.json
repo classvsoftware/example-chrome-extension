@@ -33,6 +33,7 @@
     "alarms",
     "storage",
     "activeTab",
+    "tabs",
     "scripting",
     "declarativeNetRequest"
   ],
