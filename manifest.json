@@ -1,7 +1,4 @@
 {
-  // Welcome to the Browser Extension Explorer manifest!
-  //
-  // Comments are allowed in manifest.json files
   "manifest_version": 3,
   "version": "1.0.2",
   "default_locale": "en",
