@@ -9,43 +9,43 @@
     "id": "popup",
     "title": "Popup Page",
     "subtitle": "Experiment with the default popup page",
-    "description": ""
+    "description": "The manifest specifies this page as the default popup page. By default, it opens when the toolbar icon is clicked."
   },
   {
     "id": "options",
     "title": "Options Page",
     "subtitle": "Experiment with the default options page",
-    "description": ""
+    "description": "The manifest specifies this page as the default options page. By default, it will open as a modal window in the browser extension page."
   },
   {
     "id": "environment-info",
     "title": "Environment Details",
-    "subtitle": "Read information about the extension and its environment",
-    "description": ""
+    "subtitle": "View information about the extension and its environment",
+    "description": "The Web Extensions API offers a handful of methods that expose information about the current page, manifest content, and system platform."
   },
   {
     "id": "url-analyzer",
     "title": "Inspect Extension URL",
     "subtitle": "Understand how extension URLs are constructed",
-    "description": ""
+    "description": "Browser extensions use a special URL format to serve files."
   },
   {
     "id": "chrome-tutorial",
-    "title": "Set Page Background Color",
+    "title": "Chrome Extension Tutorial",
     "subtitle": "Use the WebExtension Storage API and content scripts to modify webpages",
-    "description": ""
+    "description": "This example is based off <a class=\"btn-link\" href=\"https://developer.chrome.com/docs/extensions/mv3/getstarted/\">Google's browser extension tutorial</a>"
   },
   {
     "id": "modify-toolbar-icon",
     "title": "Modify Toolbar Icon",
     "subtitle": "Programmatically change the extension's toolbar icon",
-    "description": ""
+    "description": "The extension's toolbar icon can be programmatically modified in a wide variety of ways. You can control the image, hover text, badge text, and badge color."
   },
   {
     "id": "static-dnr",
     "title": "Static Declarative Net Request",
     "subtitle": "Experiment with static DNR rulesets",
-    "description": ""
+    "description": "Static rulesets can block or modify outgoing network requests. The Declarative Net Request API allows rulesets to be enabled or disabled on demand."
   },
   {
     "id": "dynamic-dnr",

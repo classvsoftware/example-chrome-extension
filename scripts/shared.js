@@ -81,7 +81,7 @@ export async function initializeBoilerplate() {
 </div>`;
 
   document.querySelector("#page-title").innerText = currentPageData.title;
-  document.querySelector("#page-description").innerText =
+  document.querySelector("#page-description").innerHTML =
     currentPageData.description;
 
   document.querySelector("#reload").addEventListener("click", () => {
@@ -117,7 +117,7 @@ export function showToast({ variant = "bg-primary", body }) {
   toastContainer.appendChild(toast);
 
   toast.innerHTML = `
-<div class="toast text-white ${variant} border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+<div class="toast text-white ${variant} border-0" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false" style="min-width:540px;">
   <div class="flex flex-row justify-between items-center">
     <div class="toast-body">${body}</div>
     <button
