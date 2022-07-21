@@ -45,13 +45,13 @@
     "id": "static-dnr",
     "title": "Static Declarative Net Request",
     "subtitle": "Experiment with static DNR rulesets",
-    "description": "Static rulesets can block or modify outgoing network requests. The Declarative Net Request API allows rulesets to be enabled or disabled on demand."
+    "description": "Static rulesets can block or modify outgoing network requests from browser tabs. The Declarative Net Request API allows rulesets to be enabled or disabled on demand."
   },
   {
     "id": "dynamic-dnr",
     "title": "Dynamic Declarative Net Request",
     "subtitle": "Experiment with dynamic DNR rules",
-    "description": "Dynamic rulesets can block or modify outgoing network requests. The Declarative Net Request API allows rules to be created, modified, or destroyed on demand."
+    "description": "Dynamic rulesets can block or modify outgoing network requests from browser tabs. The Declarative Net Request API allows rules to be created, modified, or destroyed on demand."
   },
   {
     "id": "tabs-viewer",

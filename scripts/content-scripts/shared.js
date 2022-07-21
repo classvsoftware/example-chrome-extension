@@ -11,3 +11,17 @@ export async function sendStaticBlockRequest() {
     () => {}
   );
 }
+
+export async function sendDynamicRedirectRequest() {
+  fetch("https://httpbin.org/anything/dynamic/redirectme").then(
+    () => {},
+    () => {}
+  );
+}
+
+export async function sendDynamicBlockRequest() {
+  fetch("https://httpbin.org/anything/dynamic/blockme").then(
+    () => {},
+    () => {}
+  );
+}

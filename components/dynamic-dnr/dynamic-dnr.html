@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dynamic-dnr</title>
 
     <script src="/scripts/vendor/tailwind.js"></script>
     <script src="/scripts/vendor/bootstrap.js"></script>
@@ -15,6 +14,74 @@
     <link href="dynamic-dnr.css" rel="stylesheet" />
   </head>
   <body>
+    <div
+      class="grid grid-cols-2 auto-rows-min place-items-stretch gap-8 max-w-5xl w-full"
+    >
+      <div class="flex flex-col items-stretch gap-8">
+        <div class="text-sm text-gray-400">
+          To see the requests being modified by this tool, open the developer
+          tools in the main page and select the Network tab.
+        </div>
+
+        <div class="form-group flex flex-col items-stretch">
+          <button
+            class="btn btn-outline-primary dropdown-toggle"
+            id="dropdownMenuButton1"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Select request...
+          </button>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li>
+              <button id="dynamic-redirect" class="dropdown-item">
+                <div class="font-monospace">/dynamic/redirect</div>
+                <small class="text-gray-500"
+                  >If redirect rule is enabled, this will be redirected.</small
+                >
+              </button>
+            </li>
+            <li>
+              <button id="dynamic-block" class="dropdown-item">
+                <div class="font-monospace">/dynamic/block</div>
+                <small class="text-gray-500"
+                  >If the blocking rule is enabled, this will be blocked.</small
+                >
+              </button>
+            </li>
+          </ul>
+
+          <div class="form-text">
+            Dispatch an HTTP request in the browser's current active tab. Open
+            the developer tools network tab to view the result of the outgoing
+            request.
+            <span class="font-bold"
+              >Note: these requests may throw CORS errors, this is
+              expected</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group flex flex-col items-stretch">
+          <button id="toggle-rule" class="btn btn-outline-primary">
+            Toggle block rule
+          </button>
+
+          <div class="form-text">
+            Add/remove blocking rule from the dynamic rules
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Enabled Dynamic Rules</div>
+        <div class="card-body">
+          <pre class="card-text text-xs" id="dynamic-rules-container"></pre>
+        </div>
+      </div>
+    </div>
+
     <script src="dynamic-dnr.js" type="module"></script>
   </body>
 </html>

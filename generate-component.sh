@@ -22,7 +22,6 @@ cat <<EOF >components/$1/$1.html
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>$1</title>
 
     <script src="/scripts/vendor/tailwind.js"></script>
     <script src="/scripts/vendor/bootstrap.js"></script>

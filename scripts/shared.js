@@ -44,6 +44,8 @@ export async function initializeComponent() {
     };
   }
 
+  document.title = currentPageData.title + " - Browser Extension Explorer";
+
   document.querySelector("#dbx-menu").innerHTML = menuHtml;
 
   for (const el of document.querySelectorAll("[data-component-title]")) {
@@ -179,7 +181,6 @@ export async function showWarningIfNotPopup() {
 export async function showWarningIfNotPermittedScheme() {
   const listener = _.debounce(async () => {
     const [tab] = await activeTab();
-    console.log(tab);
 
     const el = document.querySelector("#permitted-scheme-warning");
 
