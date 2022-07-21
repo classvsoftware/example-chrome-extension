@@ -1,13 +1,13 @@
-// Welcome to the Browser Extension Explorer manifest!
-//
-// Comments are allowed in manifest.json files
 {
+  // Welcome to the Browser Extension Explorer manifest!
+  //
+  // Comments are allowed in manifest.json files
+  "manifest_version": 3,
+  "version": "1.0.2",
+  "default_locale": "en",
   // __MSG messages are drawn from the _locales directory
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
-  "version": "1.0.2",
-  "manifest_version": 3,
-  "default_locale": "en",
   "background": {
     "service_worker": "background.js",
     "type": "module" // Allows the use of `import`
