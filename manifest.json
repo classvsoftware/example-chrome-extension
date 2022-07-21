@@ -54,16 +54,6 @@
       "description": "__MSG_customCommandDescription__"
     }
   },
-  "chrome_settings_overrides": {
-    "homepage": "https://www.buildingbrowserextensions.com",
-    "search_provider": {
-      "name": "__MSG_searchEngineName__",
-      "search_url": "https://search.brave.com/search?q={searchTerms}",
-      "encoding": "UTF-8",
-      "is_default": true
-    },
-    "startup_pages": ["https://www.buildingbrowserextensions.com"]
-  },
   "web_accessible_resources": [
     {
       "resources": ["/scripts/shared.js"],
