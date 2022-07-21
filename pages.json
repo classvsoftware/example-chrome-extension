@@ -58,5 +58,6 @@
     "title": "Tab/Window Dashboard",
     "subtitle": "View and control your browser's tabs and windows in real-time",
     "description": ""
-  }
+  },
+  { "id": "test", "title": "test", "subtitle": "test", "description": "test" }
 ]
