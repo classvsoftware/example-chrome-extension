@@ -25,7 +25,6 @@
   "devtools_page": "components/devtools/devtools.html",
   "host_permissions": ["<all_urls>"],
   "permissions": [
-    "alarms",
     "storage",
     "activeTab",
     "tabs",
