@@ -1,6 +1,6 @@
 import { initializeBoilerplate } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "Environment Info" });
+initializeBoilerplate();
 
 document.querySelector("#url").innerText = chrome.runtime.getURL("");
 

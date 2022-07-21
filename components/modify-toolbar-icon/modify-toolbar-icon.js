@@ -1,6 +1,6 @@
 import { initializeBoilerplate, showToast } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "Modify Toolbar Icon" });
+initializeBoilerplate();
 
 document.querySelector("#tooltip-btn").addEventListener("click", () => {
   const title = document.querySelector("#tooltip").value;

@@ -1,6 +1,6 @@
 import { initializeBoilerplate, showToast } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "Set Page Background Color" });
+initializeBoilerplate();
 
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";

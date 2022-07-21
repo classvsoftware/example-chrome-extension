@@ -1,6 +1,6 @@
 import { initializeBoilerplate } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "Inspect Extension Url" });
+initializeBoilerplate();
 
 document.querySelector("#url").value = window.location.href;
 document.querySelector("#protocol").value = window.location.protocol;

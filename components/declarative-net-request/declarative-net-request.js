@@ -1,7 +1,7 @@
 
 import { initializeBoilerplate, showToast, activeTab } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "declarative-net-request" });
+initializeBoilerplate();
 
 updateStaticRules();
 updateDynamicRules();

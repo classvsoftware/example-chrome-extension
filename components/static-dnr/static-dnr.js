@@ -11,7 +11,7 @@ import {
 // Static ruleset ID that can be toggled
 const STATIC_RULESET_ID = "ruleset_2";
 
-initializeBoilerplate({ title: "Static Declarative Net Request" });
+initializeBoilerplate();
 
 refreshDisplayedRulesets();
 

@@ -6,12 +6,14 @@ then
       exit 1
 fi
 
-TARGET="<!-- DBX_TARGET -->"
+# TARGET="<!-- DBX_TARGET -->"
 
-HEADERTPL="<li><a class=\"dropdown-item\" href=\"\/components\/$1\/$1.html\"><div>$1<\/div><small class=\"text-gray-500\">$1<\/small><\/a><\/li>$TARGET"
+# HEADERTPL="<li><a class=\"dropdown-item\" href=\"\/components\/$1\/$1.html\"><div>$1<\/div><small class=\"text-gray-500\">$1<\/small><\/a><\/li>$TARGET"
 
-sed -i "s/$TARGET/$HEADERTPL/" components/header/header.html
+# sed -i "s/$TARGET/$HEADERTPL/" components/header/header.html
 
+sed -i "s/]/{\"id\":\"$1\",\"title\":\"$1\",\"subtitle\":\"$1\",\"description\":\"$1\"}]/" pages.json
+ 
 mkdir components/$1
 
 cat <<EOF >components/$1/$1.html
@@ -44,5 +46,5 @@ EOF
 cat <<EOF >components/$1/$1.js
 import { initializeBoilerplate } from "/scripts/shared.js";
 
-initializeBoilerplate({ title: "$1" });
+initializeBoilerplate();
 EOF

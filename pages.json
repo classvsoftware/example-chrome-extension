@@ -1,0 +1,62 @@
+[
+  {
+    "id": "welcome",
+    "title": "Welcome Page",
+    "subtitle": "Welcome to the Browser Extension Explorer!",
+    "description": ""
+  },
+  {
+    "id": "popup",
+    "title": "Popup Page",
+    "subtitle": "Experiment with the default popup page",
+    "description": ""
+  },
+  {
+    "id": "options",
+    "title": "Options Page",
+    "subtitle": "Experiment with the default options page",
+    "description": ""
+  },
+  {
+    "id": "environment-info",
+    "title": "Environment Details",
+    "subtitle": "Read information about the extension and its environment",
+    "description": ""
+  },
+  {
+    "id": "url-analyzer",
+    "title": "Inspect Extension URL",
+    "subtitle": "Understand how extension URLs are constructed",
+    "description": ""
+  },
+  {
+    "id": "chrome-tutorial",
+    "title": "Set Page Background Color",
+    "subtitle": "Use the WebExtension Storage API and content scripts to modify webpages",
+    "description": ""
+  },
+  {
+    "id": "modify-toolbar-icon",
+    "title": "Modify Toolbar Icon",
+    "subtitle": "Programmatically change the extension's toolbar icon",
+    "description": ""
+  },
+  {
+    "id": "static-dnr",
+    "title": "Static Declarative Net Request",
+    "subtitle": "Experiment with static DNR rulesets",
+    "description": ""
+  },
+  {
+    "id": "dynamic-dnr",
+    "title": "Dynamic Declarative Net Request",
+    "subtitle": "Experiment with dynamic DNR rules",
+    "description": ""
+  },
+  {
+    "id": "tabs-viewer",
+    "title": "Tab/Window Dashboard",
+    "subtitle": "View and control your browser's tabs and windows in real-time",
+    "description": ""
+  }
+]

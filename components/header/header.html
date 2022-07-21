@@ -32,105 +32,17 @@
     </a>
 
     <ul
+      id="dbx-menu"
       class="dropdown-menu"
       style="max-height: 360px; overflow-y: auto"
       aria-labelledby="dropdownMenuButton1"
     >
-      <li>
-        <a class="dropdown-item" href="/components/welcome/welcome.html">
-          <div>Welcome Page</div>
-          <small class="text-gray-500"
-            >Welcome to the Browser Extension Explorer!</small
-          >
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="/components/popup/popup.html">
-          <div>Popup Page</div>
-          <small class="text-gray-500"
-            >Experiment with the default popup page</small
-          >
-        </a>
-      </li>
-      <li>
-        <a class="dropdown-item" href="/components/options/options.html">
-          <div>Options Page</div>
-          <small class="text-gray-500"
-            >Experiment with the default options page</small
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          class="dropdown-item"
-          href="/components/environment-info/environment-info.html"
-        >
-          <div>Environment Info</div>
-          <small class="text-gray-500"
-            >Read information about the extension and its environment</small
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          class="dropdown-item"
-          href="/components/url-analyzer/url-analyzer.html"
-        >
-          <div>Inspect Extension URL</div>
-          <small class="text-gray-500"
-            >Understand how extension URLs are constructed</small
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          class="dropdown-item"
-          href="/components/chrome-tutorial/chrome-tutorial.html"
-        >
-          <div>Set Page Background Color</div>
-          <small class="text-gray-500"
-            >Use the WebExtension Storage API and content scripts to modify
-            webpages</small
-          >
-        </a>
-      </li>
-      <li>
-        <a
-          class="dropdown-item"
-          href="/components/modify-toolbar-icon/modify-toolbar-icon.html"
-          ><div>Modify Toolbar Icon</div>
-          <small class="text-gray-500"
-            >Programmatically change the extension's toolbar icon</small
-          ></a
-        >
-      </li>
-      <li>
-        <a class="dropdown-item" href="/components/static-dnr/static-dnr.html"
-          ><div>Static Declarative Net Request</div>
-          <small class="text-gray-500"
-            >Experiment with static DNR rulesets</small
-          ></a
-        >
-      </li>
-      <li>
-        <a class="dropdown-item" href="/components/dynamic-dnr/dynamic-dnr.html"
-          ><div>Dynamic Declarative Net Request</div>
-          <small class="text-gray-500"
-            >Experiment with dynamic DNR rules</small
-          ></a
-        >
-      </li>
-      <li>
-        <a class="dropdown-item" href="/components/tabs-viewer/tabs-viewer.html"
-          ><div>Tab and Window Overview</div>
-          <small class="text-gray-500"
-            >View and manage your browser's tabs and windows</small
-          ></a
-        >
-      </li>
       <!-- DBX_TARGET -->
     </ul>
   </div>
 
-  <div id="page-title" class="text-2xl text-gray-400"></div>
+  <div class="flex flex-col items-end">
+    <div id="page-title" class="text-2xl text-gray-400"></div>
+    <div id="page-description" class="text-sm text-gray-600"></div>
+  </div>
 </div>

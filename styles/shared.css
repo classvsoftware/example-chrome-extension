@@ -3,6 +3,7 @@ body {
   min-height: max(100vh, 600px);
   display: grid;
   grid-template-rows: auto 1fr auto;
+  place-items: start center;
   padding: 1.5rem;
   gap: 3rem !important;
   overflow-y: auto;

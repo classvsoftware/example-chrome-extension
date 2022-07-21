@@ -1,12 +1,47 @@
 const githubPrefix =
   "https://github.com/msfrisbie/demo-browser-extension/tree/master/components";
 
-export async function initializeBoilerplate({ title = "" } = {}) {
+export async function initializeBoilerplate() {
+  const currentPageId = window.location.href.match(/([a-zA-Z-]+).html/)[1];
+
   const headerWrapper = document.createElement("header");
+  headerWrapper.className = "w-full";
   document.body.prepend(headerWrapper);
   headerWrapper.innerHTML = await fetch("/components/header/header.html").then(
     (r) => r.text()
   );
+
+  const pages = await fetch("/pages.json").then((r) => r.json());
+
+  let menuHtml = "";
+  let currentPageData = null;
+
+  for (let page of pages) {
+    if (page.id === currentPageId) {
+      currentPageData = page;
+    }
+
+    menuHtml += `
+    <li>
+      <a class="dropdown-item" href="/components/${page.id}/${page.id}.html">
+        <div>${page.title}</div>
+        <small class="text-gray-500"
+          >${page.subtitle}</small
+        >
+      </a>
+    </li>`;
+  }
+
+  if (!currentPageData) {
+    currentPageData = {
+      id: currentPageId,
+      title: currentPageId,
+      subtitle: currentPageId,
+      description: currentPageId,
+    };
+  }
+
+  document.querySelector("#dbx-menu").innerHTML = menuHtml;
 
   const footerWrapper = document.createElement("footer");
   footerWrapper.className = "flex flex-row items-end justify-start";
@@ -45,7 +80,9 @@ export async function initializeBoilerplate({ title = "" } = {}) {
   ${sourceCodeLinkHtml}
 </div>`;
 
-  document.querySelector("#page-title").innerText = title;
+  document.querySelector("#page-title").innerText = currentPageData.title;
+  document.querySelector("#page-description").innerText =
+    currentPageData.description;
 
   document.querySelector("#reload").addEventListener("click", () => {
     window.location.reload();
