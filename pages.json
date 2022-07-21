@@ -51,12 +51,12 @@
     "id": "dynamic-dnr",
     "title": "Dynamic Declarative Net Request",
     "subtitle": "Experiment with dynamic DNR rules",
-    "description": ""
+    "description": "Dynamic rulesets can block or modify outgoing network requests. The Declarative Net Request API allows rules to be created, modified, or destroyed on demand."
   },
   {
     "id": "tabs-viewer",
     "title": "Tab/Window Dashboard",
     "subtitle": "View and control your browser's tabs and windows in real-time",
-    "description": ""
+    "description": "This dashboard shows all of your browser's windows and tabs in real-time. You can manipulate the windows and tabs directly from the control buttons available in each card."
   }
 ]
