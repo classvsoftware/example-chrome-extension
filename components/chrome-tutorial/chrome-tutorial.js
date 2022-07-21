@@ -1,6 +1,14 @@
-import { initializeBoilerplate, showToast } from "/scripts/shared.js";
+import {
+  initializeComponent,
+  showToast,
+  showWarningIfNotPermittedScheme,
+  showWarningIfNotPopup,
+} from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent().then(() => {
+  showWarningIfNotPopup();
+  showWarningIfNotPermittedScheme();
+});
 
 let page = document.getElementById("buttonDiv");
 let selectedClassName = "current";

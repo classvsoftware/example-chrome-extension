@@ -1,6 +1,6 @@
-import { initializeBoilerplate } from "/scripts/shared.js";
+import { initializeComponent } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
 
 document.querySelector("#open-options-api").addEventListener("click", () => {
   chrome.runtime.openOptionsPage();

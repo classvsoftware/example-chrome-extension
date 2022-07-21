@@ -1,7 +1,6 @@
+import { activeTab, initializeComponent, showToast } from "/scripts/shared.js";
 
-import { initializeBoilerplate, showToast, activeTab } from "/scripts/shared.js";
-
-initializeBoilerplate();
+initializeComponent();
 
 updateStaticRules();
 updateDynamicRules();
@@ -99,13 +98,12 @@ document.body
   });
 
 async function updateStaticRules() {
-
-    document.body.querySelector('#static-rule-container').innerHTML = fetch('/rules/ruleset_1.json')
+  document.body.querySelector("#static-rule-container").innerHTML = fetch(
+    "/rules/ruleset_1.json"
+  );
 }
 
-async function updateDynamicRules() {
-
-}
+async function updateDynamicRules() {}
 
 function handleError() {
   if (chrome.runtime.lastError) {

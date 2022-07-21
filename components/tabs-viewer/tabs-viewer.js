@@ -1,6 +1,6 @@
-import { initializeBoilerplate, showToast } from "/scripts/shared.js";
+import { initializeComponent, showToast } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
 
 const container = document.querySelector("#windows-container");
 

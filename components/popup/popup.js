@@ -1,6 +1,6 @@
-import { initializeBoilerplate, showToast } from "/scripts/shared.js";
+import { initializeComponent, showToast } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
 
 document.querySelector("#popup-default").addEventListener("click", () => {
   chrome.action.setPopup({

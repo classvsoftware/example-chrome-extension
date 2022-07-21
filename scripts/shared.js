@@ -1,7 +1,10 @@
 const githubPrefix =
   "https://github.com/msfrisbie/demo-browser-extension/tree/master/components";
 
-export async function initializeBoilerplate() {
+export async function initializeComponent() {
+  // Set a random hash on this page
+  window.location.hash = Math.random().toString(36).substring(2);
+
   const currentPageId = window.location.href.match(/([a-zA-Z-]+).html/)[1];
 
   const headerWrapper = document.createElement("header");
@@ -42,6 +45,23 @@ export async function initializeBoilerplate() {
   }
 
   document.querySelector("#dbx-menu").innerHTML = menuHtml;
+
+  for (const el of document.querySelectorAll("[data-component-title]")) {
+    el.innerText = currentPageData.title;
+  }
+
+  document
+    .querySelector("[data-set-active-tab-url]")
+    .addEventListener("click", async (e) => {
+      let [tab] = await chrome.tabs.query({
+        active: true,
+        currentWindow: true,
+      });
+
+      chrome.tabs.update(tab.id, {
+        url: e.target.getAttribute("data-set-active-tab-url"),
+      });
+    });
 
   const footerWrapper = document.createElement("footer");
   footerWrapper.className = "flex flex-row items-end justify-start";
@@ -142,4 +162,34 @@ export function showToast({ variant = "bg-primary", body }) {
 
 export async function activeTab() {
   return chrome.tabs.query({ active: true, currentWindow: true });
+}
+
+export async function showWarningIfNotPopup() {
+  const [popup] = chrome.extension.getViews({ type: "popup" });
+
+  const el = document.querySelector("#popup-warning");
+
+  if (!popup || popup.location.href !== window.location.href) {
+    el.classList.remove("hidden");
+  } else {
+    el.classList.add("hidden");
+  }
+}
+
+export async function showWarningIfNotPermittedScheme() {
+  const listener = _.debounce(async () => {
+    const [tab] = await activeTab();
+    console.log(tab);
+
+    const el = document.querySelector("#permitted-scheme-warning");
+
+    if (tab.url.match(/^https?:\/\/|^ftp:\/\/|^file:\/\/\//)) {
+      el.classList.add("hidden");
+    } else {
+      el.classList.remove("hidden");
+    }
+  }, 100);
+
+  chrome.tabs.onUpdated.addListener(listener);
+  listener();
 }

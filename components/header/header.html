@@ -46,3 +46,57 @@
     <div id="page-description" class="text-md text-gray-600"></div>
   </div>
 </div>
+
+<div
+  id="popup-warning"
+  class="my-4 alert alert-danger hidden flex flex-col gap-2"
+  role="alert"
+>
+  <p>
+    It looks like you've opened this demo in a tab. To work correctly, this demo
+    should be opened as a <strong>popup</strong>:
+  </p>
+
+  <ol class="list-decimal mx-8">
+    <li>
+      Click the extension's toolbar icon (magnifying glass) or type Ctrl+Shift+F
+    </li>
+    <li>Open the <strong>Select demo</strong> dropdown</li>
+    <li>Select <strong data-component-title></strong></li>
+  </ol>
+</div>
+
+<div
+  id="permitted-scheme-warning"
+  class="my-4 alert alert-danger hidden flex flex-col gap-2"
+  role="alert"
+>
+  <p>
+    It looks like the active tab has an <strong>invalid scheme</strong>. To work
+    correctly, this demo requires the active tab's URL to have a
+    <strong>permitted scheme</strong>.
+  </p>
+
+  <p>Examples of permitted schemes:</p>
+
+  <ul class="list-disc mx-8 font-monospace">
+    <li>http://</li>
+    <li>https://</li>
+    <li>ftp://</li>
+    <li>file:///</li>
+  </ul>
+
+  <p>Examples of invalid schemes:</p>
+
+  <ul class="list-disc mx-8 font-monospace">
+    <li>chrome://</li>
+    <li>chrome-extension://</li>
+  </ul>
+
+  <button
+    data-set-active-tab-url="https://wikipedia.org"
+    class="btn btn-primary"
+  >
+    SET ACTIVE TAB TO A PAGE WITH A PERMITTED SCHEME
+  </button>
+</div>

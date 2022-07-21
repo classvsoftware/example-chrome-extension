@@ -44,7 +44,7 @@ cat <<EOF >components/$1/$1.css
 EOF
 
 cat <<EOF >components/$1/$1.js
-import { initializeBoilerplate } from "/scripts/shared.js";
+import { initializeComponent } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
 EOF

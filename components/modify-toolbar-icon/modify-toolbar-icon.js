@@ -1,6 +1,6 @@
-import { initializeBoilerplate, showToast } from "/scripts/shared.js";
+import { initializeComponent, showToast } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
 
 document.querySelector("#tooltip-btn").addEventListener("click", () => {
   const title = document.querySelector("#tooltip").value;

@@ -1,6 +1,6 @@
-import { initializeBoilerplate } from "/scripts/shared.js";
+import { initializeComponent } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
 
 document.querySelector("#url").value = window.location.href;
 document.querySelector("#protocol").value = window.location.protocol;

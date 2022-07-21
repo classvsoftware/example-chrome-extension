@@ -4,14 +4,19 @@ import {
 } from "/scripts/content-scripts/shared.js";
 import {
   activeTab,
-  initializeBoilerplate,
+  initializeComponent,
   showToast,
+  showWarningIfNotPopup,
+  showWarningIfNotPermittedScheme,
 } from "/scripts/shared.js";
 
 // Static ruleset ID that can be toggled
 const STATIC_RULESET_ID = "ruleset_2";
 
-initializeBoilerplate();
+initializeComponent().then(() => {
+  showWarningIfNotPopup();
+  showWarningIfNotPermittedScheme();
+});
 
 refreshDisplayedRulesets();
 

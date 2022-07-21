@@ -1,3 +1,3 @@
-import { initializeBoilerplate } from "/scripts/shared.js";
+import { initializeComponent } from "/scripts/shared.js";
 
-initializeBoilerplate();
+initializeComponent();
