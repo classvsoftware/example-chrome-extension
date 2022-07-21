@@ -2,22 +2,23 @@
   "manifest_version": 3,
   "version": "1.0.2",
   "default_locale": "en",
-  "name": "__MSG_extName__",
+  "name": "__MSG_extName__", // messages are drawn from the _locales directory
   "description": "__MSG_extDescription__",
   "background": {
     "service_worker": "background.js",
-    "type": "module"
+    "type": "module" // Allows the use of `import`
   },
   "action": {
     "default_popup": "components/popup/popup.html"
   },
   "options_ui": {
+    // Options page opens in a modal instead of a new tab
     "open_in_tab": false,
     "page": "components/options/options.html"
   },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["<all_urls>"], // Inject script on every page
       "css": [],
       "js": ["scripts/content-scripts/main.js"]
     }
@@ -39,6 +40,7 @@
     "128": "icons/codesearch_128x128.png"
   },
   "commands": {
+    // Defines a shortcut to open the popup
     "_execute_action": {
       "suggested_key": {
         "default": "Ctrl+Shift+F",
@@ -46,6 +48,7 @@
       },
       "description": "__MSG_actionDescription__"
     },
+    // Defines a custom command
     "foobar": {
       "suggested_key": {
         "default": "Ctrl+Shift+J",
@@ -64,6 +67,7 @@
     },
     "startup_pages": ["https://www.buildingbrowserextensions.com"]
   },
+  // Resources that can be referenced and loaded in content scripts
   "web_accessible_resources": [
     {
       "resources": ["/scripts/shared.js"],
