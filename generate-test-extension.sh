@@ -16,6 +16,10 @@ cat <<EOF >mvx/manifest.json
   "action": {
     "default_popup": "popup.html"
   },
+  "options_ui": {
+    "open_in_tab": false,
+    "page": "options.html"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -29,6 +33,9 @@ EOF
 cat <<EOF >mvx/popup.html
 <!DOCTYPE html>
 <html>
+  <head>
+    <link href="popup.css" rel="stylesheet" />
+  </head>
   <body>
     <h1>Popup</h1>
 
@@ -37,21 +44,30 @@ cat <<EOF >mvx/popup.html
 </html>
 EOF
 
+cat <<EOF >mvx/options.html
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="options.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>Options</h1>
+
+    <script src="options.js"></script>
+  </body>
+</html>
+EOF
+
+
 cat <<EOF >mvx/background.js
-
-console.log("Initialized background!");
-
 chrome.runtime.onInstalled.addListener((object) => {
     console.log("Installed background!");
 });
 EOF
 
-cat <<EOF >mvx/popup.js
 
-console.log("Initialized popup.js!");
-EOF
-
-cat <<EOF >mvx/content-script.js
-
-console.log("Initialized content script!");
-EOF
+touch mvx/popup.css
+touch mvx/options.css
+touch mvx/popup.js
+touch mvx/options.js
+touch mvx/content-script.js

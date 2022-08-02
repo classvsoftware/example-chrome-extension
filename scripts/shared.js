@@ -3,7 +3,7 @@ const githubPrefix =
 
 export async function initializeComponent() {
   // Set a random hash on this page
-  window.location.hash = Math.random().toString(36).substring(2);
+  // window.location.hash = Math.random().toString(36).substring(2);
 
   const currentPageId = window.location.href.match(/([a-zA-Z-]+).html/)[1];
 
@@ -167,11 +167,12 @@ export async function activeTab() {
 }
 
 export async function showWarningIfNotPopup() {
-  const [popup] = chrome.extension.getViews({ type: "popup" });
+  const popups = chrome.extension.getViews({ type: "popup" });
 
   const el = document.querySelector("#popup-warning");
 
-  if (!popup || popup.location.href !== window.location.href) {
+  if (!popups.includes(window)) {
+    // if (!popup || popup.location.href !== window.location.href) {
     el.classList.remove("hidden");
   } else {
     el.classList.add("hidden");
