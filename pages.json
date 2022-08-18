@@ -58,5 +58,17 @@
     "title": "Tab/Window Dashboard",
     "subtitle": "View and control your browser's tabs and windows in real-time",
     "description": "This dashboard shows all of your browser's windows and tabs in real-time. You can manipulate the windows and tabs directly from the control buttons available in each card."
+  },
+  {
+    "id": "navigation-events",
+    "title": "Navigation Events",
+    "subtitle": "View browser navigation events in real time",
+    "description": "Browser navigation events in other tabs and frames will display here in real time. This page must be left open to collect navigation events."
+  },
+  {
+    "id": "messaging",
+    "title": "messaging",
+    "subtitle": "messaging",
+    "description": "messaging"
   }
 ]

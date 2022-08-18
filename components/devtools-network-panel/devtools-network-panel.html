@@ -12,16 +12,13 @@
     <link href="/styles/shared.css" rel="stylesheet" />
 
     <link href="devtools-network-panel.css" rel="stylesheet" />
+    <script src="devtools-network-panel.js" type="module" defer></script>
   </head>
   <body>
-    <button id="reset" class="btn btn-warning">RESET</button>
+    <div id="content">
+      <button id="reset" class="btn btn-warning">RESET</button>
 
-    <div
-      id="network-log"
-      class="flex flex-col items-stretch gap-1"
-      style="max-width: 80vw"
-    ></div>
-
-    <script src="devtools-network-panel.js" type="module"></script>
+      <div id="network-log" class="text-xs flex flex-col gap-2"></div>
+    </div>
   </body>
 </html>

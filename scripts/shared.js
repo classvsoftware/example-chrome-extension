@@ -1,3 +1,5 @@
+import { pagesJson } from "./background/utils.js";
+
 const githubPrefix =
   "https://github.com/msfrisbie/demo-browser-extension/tree/master/components";
 
@@ -14,7 +16,7 @@ export async function initializeComponent() {
     (r) => r.text()
   );
 
-  const pages = await fetch("/pages.json").then((r) => r.json());
+  const pages = await pagesJson();
 
   let menuHtml = "";
   let currentPageData = null;
@@ -64,6 +66,23 @@ export async function initializeComponent() {
         url: e.target.getAttribute("data-set-active-tab-url"),
       });
     });
+
+  document
+    .querySelector("[data-open-in-tab]")
+    .addEventListener("click", async (e) => {
+      window.open(window.location.href);
+      window.close();
+    });
+
+  const content = document.querySelector("#content");
+  content.classList.add(
+    "grid",
+    "auto-rows-min",
+    "place-items-stretch",
+    "gap-8",
+    "max-w-5xl",
+    "w-full"
+  );
 
   const footerWrapper = document.createElement("footer");
   footerWrapper.className = "flex flex-row items-end justify-start";
@@ -173,6 +192,18 @@ export async function showWarningIfNotPopup() {
 
   if (!popups.includes(window)) {
     // if (!popup || popup.location.href !== window.location.href) {
+    el.classList.remove("hidden");
+  } else {
+    el.classList.add("hidden");
+  }
+}
+
+export async function showWarningIfPopup() {
+  const popups = chrome.extension.getViews({ type: "popup" });
+
+  const el = document.querySelector("#no-popup-warning");
+
+  if (popups.includes(window)) {
     el.classList.remove("hidden");
   } else {
     el.classList.add("hidden");

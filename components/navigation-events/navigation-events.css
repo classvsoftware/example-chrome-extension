@@ -1,0 +1,5 @@
+#navigation-log:empty::after {
+    content: "Navigation events from other tabs and frames will show up here.";
+    color: #cccccc;
+    height: 2rem;
+}

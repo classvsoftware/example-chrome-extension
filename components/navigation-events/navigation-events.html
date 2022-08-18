@@ -11,10 +11,17 @@
     <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="/styles/shared.css" rel="stylesheet" />
 
-    <link href="devtools-sidebar.css" rel="stylesheet" />
-    <script src="devtools-sidebar.js" type="module" defer></script>
+    <link href="navigation-events.css" rel="stylesheet" />
+    <script src="navigation-events.js" type="module" defer></script>
   </head>
   <body>
-    <div id="content">This is the devtools sidebar page.</div>
+    <div id="content">
+      <div class="flex flex-row gap-4">
+        <button id="reset" class="btn btn-warning">RESET</button>
+        <button id="create-tab" class="btn btn-success">NEW TAB</button>
+      </div>
+
+      <div id="navigation-log" class="text-xs flex flex-col gap-2"></div>
+    </div>
   </body>
 </html>

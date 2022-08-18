@@ -2,7 +2,7 @@ import { initializeComponent, showToast } from "/scripts/shared.js";
 
 initializeComponent();
 
-const container = document.querySelector("#windows-container");
+const container = document.querySelector("#content");
 
 const updateWindowsAndTabs = _.debounce(async function () {
   const windows = await chrome.windows.getAll();

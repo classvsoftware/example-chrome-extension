@@ -7,3 +7,7 @@ body {
   gap: 3rem !important;
   overflow-y: auto;
 }
+
+#content {
+  min-height: 600px;
+}

@@ -1,1 +1,6 @@
 
+#network-log:empty::after {
+    content: "Network activity from this tab will show up here.";
+    color: #cccccc;
+    height: 2rem;
+}

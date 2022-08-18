@@ -12,9 +12,10 @@
     <link href="/styles/shared.css" rel="stylesheet" />
 
     <link href="environment-info.css" rel="stylesheet" />
+    <script src="environment-info.js" type="module" defer></script>
   </head>
   <body>
-    <div class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl w-full">
+    <div id="content">
       <div class="card">
         <pre class="card-header">chrome.runtime.getURL()</pre>
         <div class="card-body">
@@ -36,7 +37,5 @@
         </div>
       </div>
     </div>
-
-    <script src="environment-info.js" type="module"></script>
   </body>
 </html>

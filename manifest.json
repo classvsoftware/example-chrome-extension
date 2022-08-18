@@ -25,11 +25,13 @@
   "devtools_page": "components/devtools/devtools.html",
   "host_permissions": ["<all_urls>"],
   "permissions": [
-    "storage",
     "activeTab",
-    "tabs",
+    "contextMenus",
+    "declarativeNetRequest",
     "scripting",
-    "declarativeNetRequest"
+    "storage",
+    "tabs",
+    "webNavigation"
   ],
   "icons": {
     "16": "icons/codesearch_16x16.png",
@@ -72,5 +74,8 @@
         "path": "rulesets/ruleset_2.json"
       }
     ]
+  },
+  "omnibox": {
+    "keyword": "bxx"
   }
 }

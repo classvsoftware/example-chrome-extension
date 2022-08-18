@@ -31,9 +31,10 @@ cat <<EOF >components/$1/$1.html
     <link href="/styles/shared.css" rel="stylesheet" />
 
     <link href="$1.css" rel="stylesheet" />
+    <script src="$1.js" type="module" defer></script>
   </head>
   <body>
-    <script src="$1.js" type="module"></script>
+    <div id="content" class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl w-full">
   </body>
 </html>
 EOF

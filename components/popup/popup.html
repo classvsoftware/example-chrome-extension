@@ -12,9 +12,10 @@
     <link href="/styles/shared.css" rel="stylesheet" />
 
     <link href="popup.css" rel="stylesheet" />
+    <script src="popup.js" type="module" defer></script>
   </head>
   <body>
-    <div class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl w-full">
+    <div id="content">
       <div class="text-center">
         You can open and close the popup page using the keyboard shortcut
         Ctrl+Shift+F. This shortcut is defined in the extension manifest.
@@ -44,7 +45,5 @@
         </ul>
       </div>
     </div>
-
-    <script src="popup.js" type="module"></script>
   </body>
 </html>
