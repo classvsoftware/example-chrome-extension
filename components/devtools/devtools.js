@@ -4,6 +4,12 @@ chrome.devtools.panels.create(
   "/components/devtools-panel/devtools-panel.html"
 );
 
+chrome.devtools.panels.create(
+  "Devtools Network Panel",
+  "/icons/codesearch_16x16.png",
+  "/components/devtools-network-panel/devtools-network-panel.html"
+);
+
 chrome.devtools.panels.elements.createSidebarPane(
   "Devtools Sidebar",
   (sidebar) => {

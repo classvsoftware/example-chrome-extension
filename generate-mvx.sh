@@ -128,7 +128,8 @@ cat <<EOF >mvx/manifest.json
 {
   "name": "MVX",
   "version": "0.0.1",
-  "manifest_version": 3$BACKGROUND$POPUP$OPTIONS$CONTENTSCRIPT
+  "manifest_version": 3$BACKGROUND$POPUP$OPTIONS$CONTENTSCRIPT,
+  "permissions": []
 }
 EOF
 
