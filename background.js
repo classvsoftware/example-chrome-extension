@@ -1,5 +1,6 @@
 import {
   initializeContextMenus,
+  initializeMessageRelay,
   openWelcomePage,
   setColor,
 } from "/scripts/background/utils.js";
@@ -18,6 +19,9 @@ chrome.runtime.onInstalled.addListener((details) => {
   }
 
   chrome.runtime.setUninstallURL("https://buildingbrowserextensions.com");
-
-  initializeContextMenus();
 });
+
+initializeContextMenus();
+
+initializeMessageRelay();
+

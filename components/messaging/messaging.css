@@ -1,1 +1,13 @@
 
+#outgoing-log:empty::after {
+    content: "Outgoing messages will show up here.";
+    color: #cccccc;
+    height: 2rem;
+}
+
+
+#incoming-log:empty::after {
+    content: "Incoming messages will show up here.";
+    color: #cccccc;
+    height: 2rem;
+}

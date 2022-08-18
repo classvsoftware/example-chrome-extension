@@ -28,6 +28,8 @@ export function openWelcomePage(details) {
 }
 
 export async function initializeContextMenus() {
+  await chrome.contextMenus.removeAll();
+
   const QUICK_OPEN_PREFIX = "quickopen__";
 
   const pages = await pagesJson();
@@ -47,59 +49,125 @@ export async function initializeContextMenus() {
     });
   }
 
-  // chrome.contextMenus.create({
-  //   id: "foo",
-  //   title: "first",
-  //   contexts: ["all"],
-  // });
+  chrome.contextMenus.create({
+    id: "separator-1",
+    contexts: ["all"],
+    type: "separator",
+  });
 
-  // chrome.contextMenus.create({
-  //   id: "bar1",
-  //   title: "second1",
-  //   contexts: ["all"],
-  //   type: "radio",
-  // });
+  chrome.contextMenus.create({
+    id: "demo-checkbox",
+    title: "Check and uncheck me!",
+    contexts: ["all"],
+    type: "checkbox",
+  });
 
-  // chrome.contextMenus.create({
-  //   id: "bar2",
-  //   title: "second2",
-  //   contexts: ["all"],
-  //   type: "radio",
-  // });
+  chrome.contextMenus.create({
+    id: "demo-radio",
+    title: "Select a radio button...",
+    contexts: ["all"],
+  });
 
-  // chrome.contextMenus.create({
-  //   id: "bar3",
-  //   title: "second3",
-  //   contexts: ["all"],
-  //   type: "radio",
-  // });
-
-  // chrome.contextMenus.create({
-  //   id: "baz",
-  //   title: "third",
-  //   contexts: ["all"],
-  //   type: "separator",
-  // });
-
-  // chrome.contextMenus.create({
-  //   id: "qux",
-  //   parentId: "foo",
-  //   title: "fourth",
-  //   contexts: ["all"],
-  //   type: "checkbox",
-  // });
-
-  function contextClick(info, tab) {
-    console.log(info, tab);
-
-    if (info.menuItemId.startsWith(QUICK_OPEN_PREFIX)) {
-      const subId = info.menuItemId.replace(QUICK_OPEN_PREFIX, "");
-
-      chrome.tabs.create({
-        url: getPageUrl(subId),
-      });
-    }
+  for (let i of [1, 2, 3, 4, 5]) {
+    chrome.contextMenus.create({
+      id: `demo-radio-${i}`,
+      parentId: "demo-radio",
+      title: `Radio ${i}`,
+      contexts: ["all"],
+      type: "radio",
+    });
   }
 
-  chrome.contextMenus.onClicked.addListener(contextClick);
+  chrome.contextMenus.create({
+    id: "separator-2",
+    contexts: ["all"],
+    type: "separator",
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-page",
+    title: "You right clicked the page",
+    contexts: ["page", "frame"],
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-selection",
+    title: "You right clicked selected text",
+    contexts: ["selection"],
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-media",
+    title: "You right clicked a media element",
+    contexts: ["image", "video", "audio"],
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-action",
+    title: "You right clicked the toolbar icon",
+    contexts: ["action"],
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-editable",
+    title: "You right clicked a form input",
+    contexts: ["editable"],
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-link",
+    title: "You right clicked a link",
+    contexts: ["link"],
+  });
+
+  chrome.contextMenus.create({
+    id: "demo-disabled",
+    title: "I'm disabled",
+    enabled: false,
+    contexts: ["all"],
+  });
+
+  chrome.contextMenus.onClicked.addListener((info, tab) => {
+    chrome.runtime.sendMessage({
+      id: "CONTEXT_MENU_CLICK",
+      info,
+      tab,
+    });
+
+    if (info.menuItemId.startsWith(QUICK_OPEN_PREFIX)) {
+      chrome.tabs.create({
+        url: getPageUrl(info.menuItemId.replace(QUICK_OPEN_PREFIX, "")),
+      });
+    }
+  });
+}
+
+export function initializeMessageRelay() {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    switch (msg.id) {
+      case "BACKGROUND_MESSAGE_RELAY":
+        sendResponse({
+          text: `Background heard message ${msg.count}`,
+          sender,
+        });
+        break;
+      default:
+        break;
+    }
+  });
+
+  chrome.runtime.onConnect.addListener((port) => {
+    switch (port.name) {
+      case "BACKGROUND_PORT_RELAY":
+        port.onMessage.addListener((msg) => {
+          port.postMessage({
+            text: `Background heard message ${msg.count}`,
+            port,
+          });
+        });
+        break;
+      default:
+        break;
+    }
+  });
 }

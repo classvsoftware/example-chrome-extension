@@ -67,8 +67,14 @@
   },
   {
     "id": "messaging",
-    "title": "messaging",
-    "subtitle": "messaging",
-    "description": "messaging"
+    "title": "Extension Messaging",
+    "subtitle": "Send and recieve messages across the extension",
+    "description": "The Web Extensions API allows for two ways of sending cross-context messages: one-off messages, or connecting message ports to send streams of messages."
+  },
+  {
+    "id": "context-menus",
+    "title": "Context Menu Clicks",
+    "subtitle": "Track click information for custom context menu items",
+    "description": "The ContextMenus API allows you to add custom items to right click context menus throughout the browser. Right click on the page, links, selected text, or the toolbar icon to access it."
   }
 ]

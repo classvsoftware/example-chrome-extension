@@ -11,25 +11,16 @@
     <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="/styles/shared.css" rel="stylesheet" />
 
-    <link href="messaging.css" rel="stylesheet" />
-    <script src="messaging.js" type="module" defer></script>
+    <link href="context-menus.css" rel="stylesheet" />
+    <script src="context-menus.js" type="module" defer></script>
   </head>
   <body>
     <div id="content">
-      <div class="flex flex-row gap-4">
+      <div>
         <button id="reset" class="btn btn-warning">RESET</button>
-        <button id="send-message" class="btn btn-success">
-          SEND SINGLE MESSAGE
-        </button>
-        <button id="connect-port" class="btn btn-success">
-          SEND PORT MESSAGES
-        </button>
       </div>
 
-      <div class="grid grid-cols-2 gap-8">
-        <div id="outgoing-log" class="text-xs flex flex-col gap-2"></div>
-        <div id="incoming-log" class="text-xs flex flex-col gap-2"></div>
-      </div>
+      <div id="click-log" class="text-xs flex flex-col gap-2"></div>
     </div>
   </body>
 </html>

@@ -34,7 +34,7 @@ cat <<EOF >components/$1/$1.html
     <script src="$1.js" type="module" defer></script>
   </head>
   <body>
-    <div id="content" class="grid auto-rows-min place-items-stretch gap-8 max-w-5xl w-full">
+    <div id="content"></div>
   </body>
 </html>
 EOF

@@ -1,0 +1,7 @@
+
+
+#click-log:empty::after {
+    content: "Context menu click data will show up here.";
+    color: #cccccc;
+    height: 2rem;
+}
