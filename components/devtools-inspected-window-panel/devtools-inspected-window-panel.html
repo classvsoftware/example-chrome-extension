@@ -11,11 +11,14 @@
     <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
     <link href="/styles/shared.css" rel="stylesheet" />
 
-    <link href="devtools-panel.css" rel="stylesheet" />
+    <link href="devtools-inspected-window-panel.css" rel="stylesheet" />
+    <script src="devtools-inspected-window-panel.js" type="module" defer></script>
   </head>
   <body>
-    <div id="content">This is the devtools panel page.</div>
-
-    <script src="devtools-panel.js" type="module" defer></script>
+    <div id="content">
+      <div class="card">
+        <pre id="resources" class="card-body"></pre>
+      </div>
+    </div>
   </body>
 </html>

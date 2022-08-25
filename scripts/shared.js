@@ -7,7 +7,7 @@ export async function initializeComponent() {
   // Set a random hash on this page
   // window.location.hash = Math.random().toString(36).substring(2);
 
-  const currentPageId = window.location.href.match(/([a-zA-Z-]+).html/)[1];
+  const currentPageId = window.location.href.match(/([a-zA-Z0-9-]+).html/)[1];
 
   const headerWrapper = document.createElement("header");
   headerWrapper.className = "w-full";

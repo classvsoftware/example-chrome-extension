@@ -1,6 +1,7 @@
 {
   "manifest_version": 3,
   "version": "1.0.5",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmuD0TSQbILKC4482AYrlObXdyPcCSxmSUEwaFAulTCdrFJr1zLLn7AMxrt8sYv32q7hKPj0jLWxvm6FHkF0fJ1+jgnnBtbkozCKyS9PgGVnGqTs/dJkwBwccuSCXKr0nRbn2RRQZw0IS/V312H8P//fZcOh0Of4Q4+jw6RNGMLWqfZySj08hnQKVd564DLyKYPqsxBd/x8pER+OmHMbm8LQEh4VKCJBjjhj3GwsIFo7e9IXizQFOW8YdzWkgFV6WsUniB4fIWTNPEEWQ5qGm/Bd4o0u0z2Yk73VvNDVYBBefFgIi3TsJssrShgkJAyWz3tNCF11J9EpLWnZIXByioQIDAQAB",
   "default_locale": "en",
   "name": "__MSG_extName__",
   "description": "__MSG_extDescription__",
@@ -28,6 +29,8 @@
     "activeTab",
     "contextMenus",
     "declarativeNetRequest",
+    "identity",
+    "identity.email",
     "scripting",
     "storage",
     "tabs",
@@ -76,6 +79,13 @@
     ]
   },
   "omnibox": {
-    "keyword": "bxx"
+    "keyword": "bex"
+  },
+  "oauth2": {
+    "client_id": "594787837490-d8mabjl50gmgv9b2rsqqpm5j7pf88ov2.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
   }
 }

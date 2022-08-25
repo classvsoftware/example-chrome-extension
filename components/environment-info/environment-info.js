@@ -17,3 +17,5 @@ chrome.runtime.getPlatformInfo((info) => {
     2
   );
 });
+
+chrome.extension.getViews()
