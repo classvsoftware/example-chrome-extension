@@ -85,20 +85,20 @@
   },
   {
     "id": "oauth2",
-    "title": "oauth2",
-    "subtitle": "oauth2",
-    "description": "oauth2"
+    "title": "Native Browser Google OAuth",
+    "subtitle": "Authenticate with Google OAuth",
+    "description": "If using OAuth in Google Chrome and with a Google Login, the flow can be greatly simplified using the identity API. Click the button below to securely authenticate with your Google account."
   },
   {
     "id": "openid",
-    "title": "openid",
-    "subtitle": "openid",
-    "description": "openid"
+    "title": "Google OpenID Connect Authentication",
+    "subtitle": "Authentiate with Google OpenID",
+    "description": "Google supports OpenID authentication, and this can be easily used with the identity API. Click the button below to securely authenticate with your Google account."
   },
   {
     "id": "github-oauth",
-    "title": "github-oauth",
-    "subtitle": "github-oauth",
-    "description": "github-oauth"
+    "title": "Manual Github OAuth",
+    "subtitle": "Authenticate with Github OAuth",
+    "description": "The identity API is compatible with any OAuth provider. Click the button below to securely authenticate with your Github account."
   }
 ]
