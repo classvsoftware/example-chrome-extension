@@ -3,6 +3,7 @@ import {
   initializeMessageRelay,
   openWelcomePage,
   setColor,
+  initializeOmnibox,
 } from "/scripts/background/utils.js";
 
 console.log("Initialized background!");
@@ -25,3 +26,4 @@ initializeContextMenus();
 
 initializeMessageRelay();
 
+initializeOmnibox();

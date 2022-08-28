@@ -18,4 +18,8 @@ chrome.runtime.getPlatformInfo((info) => {
   );
 });
 
-chrome.extension.getViews()
+document.querySelector("#views").innerText = JSON.stringify(
+  chrome.extension.getViews().map((window) => window.location.href),
+  null,
+  2
+);

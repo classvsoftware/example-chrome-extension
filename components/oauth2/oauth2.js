@@ -50,10 +50,18 @@ document.querySelector("#login").addEventListener("click", () => {
     },
     (token) => {
       if (token) {
+        chrome.identity.getProfileUserInfo(
+          { accountStatus: "ANY" },
+          console.log
+        );
         login(token);
       }
     }
   );
+});
+
+document.querySelector("#profileinfo").addEventListener("click", () => {
+  chrome.identity.getProfileUserInfo({ accountStatus: "ANY" }, console.log);
 });
 
 document.querySelector("#logout").addEventListener("click", () => {

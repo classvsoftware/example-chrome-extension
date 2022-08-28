@@ -1,3 +1,5 @@
+import { activeTab } from "/scripts/shared.js";
+
 export async function pagesJson() {
   return fetch("/pages.json")
     .then((r) => r.json())
@@ -171,3 +173,72 @@ export function initializeMessageRelay() {
     }
   });
 }
+
+export async function initializeOmnibox() {
+  const pages = await pagesJson();
+
+  chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
+    const normalizedText = text.trim().toLowerCase();
+
+    // Add suggestions to an array
+    const suggestions = pages
+      .filter((page) => {
+        return (
+          page.title.toLowerCase().includes(normalizedText) ||
+          page.subtitle.toLowerCase().includes(normalizedText)
+        );
+      })
+      .map((page) => {
+        let title = page.title;
+        let subtitle = page.subtitle;
+
+        const titleStartIdx = title.toLowerCase().indexOf(normalizedText);
+        if (titleStartIdx >= 0) {
+          const titleEndIdx = titleStartIdx + normalizedText.length;
+          title =
+            title.slice(0, titleStartIdx) +
+            "<match>" +
+            title.slice(titleStartIdx, titleEndIdx) +
+            "</match>" +
+            title.slice(titleEndIdx);
+        }
+
+        const subtitleStartIdx = subtitle.toLowerCase().indexOf(normalizedText);
+        if (subtitleStartIdx >= 0) {
+          const subtitleEndIdx = subtitleStartIdx + normalizedText.length;
+          subtitle =
+            subtitle.slice(0, subtitleStartIdx) +
+            "<match>" +
+            subtitle.slice(subtitleStartIdx, subtitleEndIdx) +
+            "</match>" +
+            subtitle.slice(subtitleEndIdx);
+        }
+
+        return {
+          content: page.url,
+          deletable: true,
+          description: `
+          ${title}
+          <dim>${subtitle}</dim>
+          <url>${page.url}</url>`,
+        };
+      });
+
+    // Set first suggestion as the default suggestion
+    // chrome.omnibox.setDefaultSuggestion({
+    //   description: suggestions[0].content,
+    // });
+
+    // Remove the first suggestion from the array since we just suggested it
+    // suggestions.shift();
+
+    // Suggest the remaining suggestions
+    suggest(suggestions);
+  });
+}
+
+chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
+  let [tab] = await activeTab();
+
+  chrome.tabs.update(tab.id, { url: text });
+});

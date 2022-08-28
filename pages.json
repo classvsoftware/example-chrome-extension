@@ -79,14 +79,26 @@
   },
   {
     "id": "omnibox",
-    "title": "omnibox",
-    "subtitle": "omnibox",
-    "description": "omnibox"
+    "title": "Omnibox Events",
+    "subtitle": "Track omnibox events sent from the URL bar",
+    "description": "The Omnibox API allows you to define a custom search interface from the URL bar. In the browser's URL bar, type 'bex' and then a space to open the omnibox interface. Events fired will appear below."
   },
   {
     "id": "oauth2",
     "title": "oauth2",
     "subtitle": "oauth2",
     "description": "oauth2"
+  },
+  {
+    "id": "openid",
+    "title": "openid",
+    "subtitle": "openid",
+    "description": "openid"
+  },
+  {
+    "id": "github-oauth",
+    "title": "github-oauth",
+    "subtitle": "github-oauth",
+    "description": "github-oauth"
   }
 ]
