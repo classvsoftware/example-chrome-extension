@@ -1,0 +1,91 @@
+{
+  "manifest_version": 3,
+  "version": "1.0.7",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmuD0TSQbILKC4482AYrlObXdyPcCSxmSUEwaFAulTCdrFJr1zLLn7AMxrt8sYv32q7hKPj0jLWxvm6FHkF0fJ1+jgnnBtbkozCKyS9PgGVnGqTs/dJkwBwccuSCXKr0nRbn2RRQZw0IS/V312H8P//fZcOh0Of4Q4+jw6RNGMLWqfZySj08hnQKVd564DLyKYPqsxBd/x8pER+OmHMbm8LQEh4VKCJBjjhj3GwsIFo7e9IXizQFOW8YdzWkgFV6WsUniB4fIWTNPEEWQ5qGm/Bd4o0u0z2Yk73VvNDVYBBefFgIi3TsJssrShgkJAyWz3tNCF11J9EpLWnZIXByioQIDAQAB",
+  "default_locale": "en",
+  "name": "__MSG_extName__",
+  "description": "__MSG_extDescription__",
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "components/popup/popup.html"
+  },
+  "options_ui": {
+    "open_in_tab": false,
+    "page": "components/options/options.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "css": [],
+      "js": ["scripts/content-scripts/main.js"]
+    }
+  ],
+  "devtools_page": "components/devtools/devtools.html",
+  "host_permissions": ["<all_urls>"],
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "declarativeNetRequest",
+    "identity",
+    "identity.email",
+    "scripting",
+    "storage",
+    "tabs",
+    "webNavigation"
+  ],
+  "icons": {
+    "16": "icons/codesearch_16x16.png",
+    "48": "icons/codesearch_48x48.png",
+    "64": "icons/codesearch_64x64.png",
+    "128": "icons/codesearch_128x128.png"
+  },
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "__MSG_actionDescription__"
+    },
+    "foobar": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+J",
+        "mac": "MacCtrl+Shift+J"
+      },
+      "description": "__MSG_customCommandDescription__"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["/scripts/shared.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rulesets/ruleset_1.json"
+      },
+      {
+        "id": "ruleset_2",
+        "enabled": false,
+        "path": "rulesets/ruleset_2.json"
+      }
+    ]
+  },
+  "omnibox": {
+    "keyword": "bex"
+  },
+  "oauth2": {
+    "client_id": "594787837490-d8mabjl50gmgv9b2rsqqpm5j7pf88ov2.apps.googleusercontent.com",
+    "scopes": [
+      "https://www.googleapis.com/auth/userinfo.email",
+      "https://www.googleapis.com/auth/userinfo.profile"
+    ]
+  }
+}
