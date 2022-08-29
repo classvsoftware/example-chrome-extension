@@ -1,17 +1,22 @@
 {
   "extName": {
-    "message": "Browser Extension Explorer"
+    "message": "Browser Extension Explorer",
+    "description": "Extension name"
   },
   "extDescription": {
-    "message": "Open source browser extension with dozens of interactive demos. Zero NPM packages, one click install, 100% HTML/JS/CSS."
+    "message": "Open source browser extension with dozens of interactive demos.",
+    "description": "Extension description"
   },
   "actionDescription": {
-    "message": "Opens popup.html"
+    "message": "Opens popup.html",
+    "description": "Popup action description"
   },
   "customCommandDescription": {
-    "message": "Runs 'foobar' on the current page"
+    "message": "Runs 'foobar' on the current page",
+    "description": "Custom action description"
   },
   "searchEngineName": {
-    "message": "Brave Search Engine"
+    "message": "Brave Search Engine",
+    "description": "Search engine override description"
   }
 }

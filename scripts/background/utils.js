@@ -1,14 +1,11 @@
+import pages from "/pages.js";
 import { activeTab } from "/scripts/shared.js";
 
 export async function pagesJson() {
-  return fetch("/pages.json")
-    .then((r) => r.json())
-    .then((pages) =>
-      pages.map((page) => ({
-        ...page,
-        url: getPageUrl(page.id),
-      }))
-    );
+  return pages.map((page) => ({
+    ...page,
+    url: getPageUrl(page.id),
+  }));
 }
 
 export function getPageUrl(id) {
@@ -175,6 +172,11 @@ export function initializeMessageRelay() {
 }
 
 export async function initializeOmnibox() {
+  if (!chrome.omnibox) {
+    console.log("Omnibox not supported");
+    return;
+  }
+
   const pages = await pagesJson();
 
   chrome.omnibox.onInputChanged.addListener(async (text, suggest) => {
@@ -235,10 +237,10 @@ export async function initializeOmnibox() {
     // Suggest the remaining suggestions
     suggest(suggestions);
   });
+
+  chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
+    let [tab] = await activeTab();
+
+    chrome.tabs.update(tab.id, { url: text });
+  });
 }
-
-chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
-  let [tab] = await activeTab();
-
-  chrome.tabs.update(tab.id, { url: text });
-});
