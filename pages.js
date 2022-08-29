@@ -117,6 +117,13 @@ const pages = [
     description:
       "The identity API is compatible with any OAuth provider. Click the button below to securely authenticate with your Github account.",
   },
+  {
+    id: "api-test",
+    title: "Web Extension API",
+    subtitle: "View the full list of API methods and properties.",
+    description:
+      "The Web Extensions API lives inside the `chrome` or `browser` namespace. This page recursively unpacks that namespace.",
+  },
 ];
 
 export default pages;
