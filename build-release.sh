@@ -5,6 +5,6 @@ then
       exit 1
 fi
 
-mkdir releases
+mkdir -p releases
 
 git archive -o releases/release-$1.zip HEAD
