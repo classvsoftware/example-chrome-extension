@@ -34,7 +34,11 @@
     "scripting",
     "storage",
     "tabs",
-    "webNavigation"
+    "webNavigation",
+    "system.cpu",
+    "system.display",
+    "system.memory",
+    "system.storage"
   ],
   "icons": {
     "16": "icons/codesearch_16x16.png",

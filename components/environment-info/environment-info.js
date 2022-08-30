@@ -23,3 +23,27 @@ document.querySelector("#views").innerText = JSON.stringify(
   null,
   2
 );
+
+document.querySelector("#system-cpu").innerText = JSON.stringify(
+  chrome.system.cpu,
+  null,
+  2
+);
+
+document.querySelector("#system-display").innerText = JSON.stringify(
+  chrome.system.display,
+  null,
+  2
+);
+
+document.querySelector("#system-memory").innerText = JSON.stringify(
+  chrome.system.memory,
+  null,
+  2
+);
+
+document.querySelector("#system-storage").innerText = JSON.stringify(
+  chrome.system.storage,
+  null,
+  2
+);
