@@ -1,6 +1,11 @@
-import { initializeComponent } from "/scripts/shared.js";
+import {
+  initializeComponent,
+  showWarningIfNotDevtools,
+} from "/scripts/shared.js";
 
-initializeComponent();
+initializeComponent().then(() => {
+  showWarningIfNotDevtools();
+});
 
 const logContainer = document.querySelector("#network-log");
 

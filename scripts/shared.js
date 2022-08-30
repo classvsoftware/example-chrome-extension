@@ -26,24 +26,22 @@ export async function initializeComponent() {
       currentPageData = page;
     }
 
-    menuHtml += `
-    <li>
-      <a class="dropdown-item" href="/components/${page.id}/${page.id}.html">
-        <div>${page.title}</div>
-        <small class="text-gray-500"
-          >${page.subtitle}</small
-        >
-      </a>
-    </li>`;
+    // Build the dropdown menu objects. Not all pages should appear in here.
+    if (page.showInDropdown) {
+      menuHtml += `
+        <li>
+          <a class="dropdown-item" href="/components/${page.id}/${page.id}.html">
+            <div>${page.title}</div>
+            <small class="text-gray-500"
+              >${page.subtitle}</small
+            >
+          </a>
+        </li>`;
+    }
   }
 
   if (!currentPageData) {
-    currentPageData = {
-      id: currentPageId,
-      title: currentPageId,
-      subtitle: currentPageId,
-      description: currentPageId,
-    };
+    throw new Error("Cannot find page data");
   }
 
   document.title = currentPageData.title + " - Browser Extension Explorer";
@@ -225,4 +223,14 @@ export async function showWarningIfNotPermittedScheme() {
 
   chrome.tabs.onUpdated.addListener(listener);
   listener();
+}
+
+export async function showWarningIfNotDevtools() {
+  const el = document.querySelector("#devtools-warning");
+
+  if (!chrome.devtools) {
+    el.classList.remove("hidden");
+  } else {
+    el.classList.add("hidden");
+  }
 }

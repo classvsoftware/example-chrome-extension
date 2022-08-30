@@ -12,7 +12,7 @@ fi
 
 # sed -i "s/$TARGET/$HEADERTPL/" components/header/header.html
 
-sed -i "" "s/]/,{\"id\":\"$1\",\"title\":\"$1\",\"subtitle\":\"$1\",\"description\":\"$1\"}]/" pages.js
+sed -i "" "s/]/,{\"id\":\"$1\",\"title\":\"$1\",\"subtitle\":\"$1\",\"description\":\"$1\",\"showInDropdown\":true}]/" pages.js
  
 mkdir components/$1
 

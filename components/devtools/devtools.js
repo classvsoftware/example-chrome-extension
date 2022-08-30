@@ -1,17 +1,17 @@
 chrome.devtools.panels.create(
-  "Devtools Network Panel",
+  "BEX Devtools Traffic Monitor",
   "/icons/codesearch_16x16.png",
   "/components/devtools-network-panel/devtools-network-panel.html"
 );
 
 chrome.devtools.panels.create(
-  "Devtools Inspected Window Panel",
+  "BEX Devtools Inspected Window Panel",
   "/icons/codesearch_16x16.png",
   "/components/devtools-inspected-window-panel/devtools-inspected-window-panel.html"
 );
 
 chrome.devtools.panels.elements.createSidebarPane(
-  "Devtools Elements Sidebar",
+  "BEX Devtools Elements Sidebar",
   (sidebar) => {
     sidebar.setPage(
       "/components/devtools-elements-sidebar/devtools-elements-sidebar.html"
@@ -21,7 +21,7 @@ chrome.devtools.panels.elements.createSidebarPane(
 );
 
 chrome.devtools.panels.sources.createSidebarPane(
-  "Devtools Sources Sidebar",
+  "BEX Devtools Sources Sidebar",
   (sidebar) => {
     sidebar.setPage(
       "/components/devtools-sources-sidebar/devtools-sources-sidebar.html"
