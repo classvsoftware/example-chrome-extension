@@ -27,6 +27,11 @@ export function openWelcomePage(details) {
 }
 
 export async function initializeContextMenus() {
+  if (!chrome.contextMenus) {
+    console.log("Context menus not supported");
+    return;
+  }
+
   await chrome.contextMenus.removeAll();
 
   const QUICK_OPEN_PREFIX = "quickopen__";

@@ -7,4 +7,6 @@ fi
 
 mkdir -p releases
 
-git archive -o releases/release-$1.zip HEAD
+# git archive -o releases/release-$1.zip HEAD
+
+zip -R releases/release-$1.zip '*.json' '*.html' '*.js' '*.css' '*.png' '*.svg' '*.jpg' '*.jpeg'

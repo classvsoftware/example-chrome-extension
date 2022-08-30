@@ -1,9 +1,9 @@
 import {
   initializeContextMenus,
   initializeMessageRelay,
+  initializeOmnibox,
   openWelcomePage,
   setColor,
-  initializeOmnibox,
 } from "/scripts/background/utils.js";
 
 console.log("Initialized background!");
@@ -13,13 +13,13 @@ console.log("Initialized background!");
 // - the extension is updated to a new version
 // - the browser is updated to a new version.
 chrome.runtime.onInstalled.addListener((details) => {
-  setColor();
-
   if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
     openWelcomePage(details);
   }
 
   chrome.runtime.setUninstallURL("https://buildingbrowserextensions.com");
+
+  setColor();
 });
 
 initializeContextMenus();
