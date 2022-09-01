@@ -8,22 +8,26 @@ import {
 
 console.log("Initialized background!");
 
-// Fired when:
-// - the extension is first installed
-// - the extension is updated to a new version
-// - the browser is updated to a new version.
-chrome.runtime.onInstalled.addListener((details) => {
-  if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
-    openWelcomePage(details);
-  }
+try {
+  // Fired when:
+  // - the extension is first installed
+  // - the extension is updated to a new version
+  // - the browser is updated to a new version.
+  chrome.runtime.onInstalled.addListener((details) => {
+    if (details.reason === chrome.runtime.OnInstalledReason.INSTALL) {
+      openWelcomePage(details);
+    }
 
-  chrome.runtime.setUninstallURL("https://buildingbrowserextensions.com");
+    chrome.runtime.setUninstallURL("https://buildingbrowserextensions.com");
 
-  setColor();
-});
+    setColor();
+  });
 
-initializeContextMenus();
+  initializeContextMenus();
 
-initializeMessageRelay();
+  initializeMessageRelay();
 
-initializeOmnibox();
+  initializeOmnibox();
+} catch (e) {
+  console.error(e);
+}
