@@ -7,7 +7,30 @@ export async function initializeComponent() {
   // Set a random hash on this page
   // window.location.hash = Math.random().toString(36).substring(2);
 
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "/scripts/vendor/ga.js";
+
+  document.body.appendChild(script);
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  const GA_ID = "G-RD0QVQ2X7R";
+
+  gtag("js", new Date());
+  gtag("config", GA_ID, {
+    send_page_view: false,
+  });
+  gtag("event", "page_view", {
+    page_path: window.location.path,
+  });
+
   const currentPageId = window.location.href.match(/([a-zA-Z0-9-]+).html/)[1];
+
+  gtag("send", "pageview", currentPageId);
 
   const headerWrapper = document.createElement("header");
   headerWrapper.className = "w-full";
