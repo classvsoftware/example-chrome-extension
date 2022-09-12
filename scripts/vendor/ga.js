@@ -12328,7 +12328,6 @@
       var b = uA(a);
       b && b.blacklisted && (N(34), a.abort());
       var c = H.location.protocol;
-      console.log(c);
       // "http:" != c && "https:" != c && (N(29), a.abort());
       Ib && "preview" == Ib.loadPurpose && (N(30), a.abort());
       var d = $g.grl;
