@@ -131,7 +131,7 @@ const pages = [
     title: "Manual Github OAuth",
     subtitle: "Authenticate with Github OAuth",
     description:
-      "The identity API is compatible with any OAuth provider. Click the button below to securely authenticate with your Github account.",
+      "The identity API is compatible with any OAuth provider, but it requires passing the client secret. Click the button below to securely authenticate with your Github account.",
     showInDropdown: true,
   },
   {
@@ -174,9 +174,9 @@ const pages = [
   {
     id: "auth0",
     title: "OAuth2 with Auth0/PKCE",
-    subtitle: "Authenticate with Auth0 and the PKCE protocol",
+    subtitle: "Authenticate with Auth0 and the PKCE protocol.",
     description:
-      "PKCE is required to avoid disclosing client secrets in the source code.",
+      "PKCE can be used to avoid disclosing client secrets in the source code, but it requires the OAuth server to support PKCE - and not all do. Click the button below to securely authenticate with Auth0 via PKCE.",
     showInDropdown: true,
   },
 ];
