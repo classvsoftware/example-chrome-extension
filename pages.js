@@ -171,6 +171,14 @@ const pages = [
     description: "",
     showInDropdown: false,
   },
+  {
+    id: "auth0",
+    title: "OAuth2 with Auth0/PKCE",
+    subtitle: "Authenticate with Auth0 and the PKCE protocol",
+    description:
+      "PKCE is required to avoid disclosing client secrets in the source code.",
+    showInDropdown: true,
+  },
 ];
 
 export default pages;

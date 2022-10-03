@@ -27,6 +27,8 @@ document.querySelector("#github").addEventListener("click", () => {
         authUrl.searchParams.append("redirect_uri", extensionRedirectUri);
         authUrl.searchParams.append(
           "client_secret",
+          // This token was revoked.
+          // Use PKCE to avoid including this in extension source.
           "42d9bd039058a07593850233333f2df032b42311"
         );
         authUrl.searchParams.append("code", code);
