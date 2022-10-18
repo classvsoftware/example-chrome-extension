@@ -11,6 +11,42 @@
     <script src="screenshot.js" type="module" defer></script>
   </head>
   <body>
-    <div id="content"></div>
+    <div id="content">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <button
+          id="capture-visible-tab"
+          class="btn btn-outline-primary font-mono"
+        >
+          chrome.tabs.captureVisibleTab()
+        </button>
+        <button id="page-capture" class="btn btn-outline-primary font-mono">
+          chrome.pageCapture.saveAsMHTML()
+        </button>
+        <button id="tab-capture" class="btn btn-outline-primary font-mono">
+          chrome.tabCapture()
+        </button>
+        <button id="desktop-capture" class="btn btn-outline-primary font-mono">
+          chrome.desktopCapture()
+        </button>
+      </div>
+
+      <img class="drop-shadow-2xl" id="img-output" style="display:none" />
+      <video id="stream-output" style="display:none"></video>
+
+      <a
+        id="download-image"
+        download="image.jpeg"
+        class="btn btn-outline-success"
+        style="display: none"
+        >DOWNLOAD</a
+      >
+      <a
+        id="download-mhtml"
+        download="page.mhtml"
+        class="btn btn-outline-success"
+        style="display: none"
+        >DOWNLOAD</a
+      >
+    </div>
   </body>
 </html>
