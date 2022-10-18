@@ -189,9 +189,10 @@ const pages = [
   },
   {
     id: "screenshot",
-    title: "screenshot",
-    subtitle: "screenshot",
-    description: "screenshot",
+    title: "Page Capture",
+    subtitle: "Capture images, page source, and streams.",
+    description:
+      "Extensions can capture screenshots of tabs, MTHML dumps of tabs, tab streams, and desktop streams using the Web Extensions API.",
     showInDropdown: true,
   },
 ];

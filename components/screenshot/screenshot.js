@@ -1,7 +1,7 @@
 import { activeTab, initializeComponent, showToast } from "/scripts/shared.js";
 
 initializeComponent().then(() => {
-  //   showWarningIfNotPopup();
+  //   showWarningIfNotPermittedScheme();
 });
 
 let stream = null;

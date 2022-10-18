@@ -12,7 +12,7 @@
   </head>
   <body>
     <div id="content">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <button
           id="capture-visible-tab"
           class="btn btn-outline-primary font-mono"
@@ -23,15 +23,15 @@
           chrome.pageCapture.saveAsMHTML()
         </button>
         <button id="tab-capture" class="btn btn-outline-primary font-mono">
-          chrome.tabCapture()
+          chrome.tabCapture.capture()
         </button>
         <button id="desktop-capture" class="btn btn-outline-primary font-mono">
-          chrome.desktopCapture()
+          chrome.desktopCapture.chooseDesktopMedia()
         </button>
       </div>
 
-      <img class="drop-shadow-2xl" id="img-output" style="display:none" />
-      <video id="stream-output" style="display:none"></video>
+      <img class="drop-shadow-2xl" id="img-output" style="display: none" />
+      <video id="stream-output" style="display: none"></video>
 
       <a
         id="download-image"
