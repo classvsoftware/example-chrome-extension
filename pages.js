@@ -186,6 +186,13 @@ const pages = [
     description: "screenshot",
     showInDropdown: true,
   },
+  {
+    id: "manifest-explainer",
+    title: "manifest-explainer",
+    subtitle: "manifest-explainer",
+    description: "manifest-explainer",
+    showInDropdown: true,
+  },
 ];
 
 export default pages;
