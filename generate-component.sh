@@ -23,11 +23,7 @@ cat <<EOF >components/$1/$1.html
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="/scripts/vendor/tailwind.js"></script>
-    <script src="/scripts/vendor/bootstrap.js"></script>
-    <script src="/scripts/vendor/lodash.js"></script>
-    <link href="/styles/vendor/bootstrap.css" rel="stylesheet" />
-    <link href="/styles/vendor/fontawesome/css/all.min.css" rel="stylesheet" />
+<script type="module" src="/scripts/vendor/shared.js"></script>
     <link href="/styles/shared.css" rel="stylesheet" />
 
     <link href="$1.css" rel="stylesheet" />

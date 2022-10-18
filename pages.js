@@ -7,19 +7,11 @@ const pages = [
     showInDropdown: true,
   },
   {
-    id: "popup",
-    title: "Popup Page",
-    subtitle: "Experiment with the default popup page",
+    id: "manifest-explainer",
+    title: "Manifest Explainer",
+    subtitle: "Understand key/value pairs in the manifest.json",
     description:
-      "The manifest specifies this page as the default popup page. By default, it opens when the toolbar icon is clicked.",
-    showInDropdown: true,
-  },
-  {
-    id: "options",
-    title: "Options Page",
-    subtitle: "Experiment with the default options page",
-    description:
-      "The manifest specifies this page as the default options page. By default, it will open as a modal window in the browser extension page.",
+      "The manifest.json file defines how an extension appears and behaves.",
     showInDropdown: true,
   },
   {
@@ -35,6 +27,22 @@ const pages = [
     title: "Inspect Extension URL",
     subtitle: "Understand how extension URLs are constructed",
     description: "Browser extensions use a special URL format to serve files.",
+    showInDropdown: true,
+  },
+  {
+    id: "popup",
+    title: "Popup Page",
+    subtitle: "Experiment with the default popup page",
+    description:
+      "The manifest specifies this page as the default popup page. By default, it opens when the toolbar icon is clicked.",
+    showInDropdown: true,
+  },
+  {
+    id: "options",
+    title: "Options Page",
+    subtitle: "Experiment with the default options page",
+    description:
+      "The manifest specifies this page as the default options page. By default, it will open as a modal window in the browser extension page.",
     showInDropdown: true,
   },
   {
@@ -184,13 +192,6 @@ const pages = [
     title: "screenshot",
     subtitle: "screenshot",
     description: "screenshot",
-    showInDropdown: true,
-  },
-  {
-    id: "manifest-explainer",
-    title: "manifest-explainer",
-    subtitle: "manifest-explainer",
-    description: "manifest-explainer",
     showInDropdown: true,
   },
 ];

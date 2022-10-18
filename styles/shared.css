@@ -1,3 +1,6 @@
+@import url("./vendor/bootstrap.css");
+@import url("./vendor/fontawesome/css/all.min.css");
+
 body {
   min-width: 720px;
   display: grid;
