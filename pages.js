@@ -179,6 +179,13 @@ const pages = [
       "PKCE can be used to avoid disclosing client secrets in the source code, but it requires the OAuth server to support PKCE - and not all do. Click the button below to securely authenticate with Auth0 via PKCE.",
     showInDropdown: true,
   },
+  {
+    id: "screenshot",
+    title: "screenshot",
+    subtitle: "screenshot",
+    description: "screenshot",
+    showInDropdown: true,
+  },
 ];
 
 export default pages;
