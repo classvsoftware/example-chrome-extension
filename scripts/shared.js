@@ -3,6 +3,8 @@ import { pagesJson } from "./background/utils.js";
 const githubPrefix =
   "https://github.com/msfrisbie/demo-browser-extension/tree/master/components";
 
+let toastContainer = null;
+
 export async function initializeComponent() {
   // Set a random hash on this page
   // window.location.hash = Math.random().toString(36).substring(2);
@@ -49,15 +51,20 @@ export async function initializeComponent() {
       currentPageData = page;
     }
 
+    console.log(await getExtensionMethods(page.id));
+
     // Build the dropdown menu objects. Not all pages should appear in here.
     if (page.showInDropdown) {
       menuHtml += `
         <li>
           <a class="dropdown-item" href="/components/${page.id}/${page.id}.html">
             <div>${page.title}</div>
-            <small class="text-gray-500"
-              >${page.subtitle}</small
-            >
+            <div>
+              <small class="text-gray-500"
+                >${page.subtitle}</small
+              >
+            </div>
+          </div>
           </a>
         </li>`;
     }
@@ -151,8 +158,6 @@ export async function initializeComponent() {
   });
 }
 
-let toastContainer = null;
-
 export function showToast({ variant = "bg-primary", body }) {
   if (!body) {
     throw new Error("Must provide body");
@@ -204,6 +209,24 @@ export function showToast({ variant = "bg-primary", body }) {
 
 export async function activeTab() {
   return chrome.tabs.query({ active: true, currentWindow: true });
+}
+
+export async function getExtensionMethods(id) {
+  const scriptText = await fetch(`/components/${id}/${id}.js`).then((r) =>
+    r.text()
+  );
+
+  const r = /chrome\.[a-zA-Z\.]+\(?/g;
+
+  return [...scriptText.matchAll(r)].map((x) => {
+    let method = x[0];
+
+    if (method.endsWith("(")) {
+      method += ")";
+    }
+
+    return method;
+  });
 }
 
 export async function showWarningIfNotPopup() {

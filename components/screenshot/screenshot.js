@@ -117,8 +117,3 @@ pageCaptureButton.addEventListener("click", () => setMhtml());
 tabCaptureButton.addEventListener("click", () => setTabStream());
 
 desktopCaptureButton.addEventListener("click", () => setDesktopStream());
-
-// pageCapture
-// tabCapture
-// desktopCapture
-// window.tabs.captureVisibleTab
