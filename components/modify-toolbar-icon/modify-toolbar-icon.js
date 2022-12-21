@@ -113,7 +113,7 @@ document.querySelector("#toolbar-reset").addEventListener("click", () => {
 
   chrome.action.setTitle(
     {
-      title: "Browser Extension Explorer",
+      title: "Example Chrome Extension",
     },
     () => {}
   );

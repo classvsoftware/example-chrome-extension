@@ -67,7 +67,7 @@ export async function initializeComponent() {
     throw new Error("Cannot find page data");
   }
 
-  document.title = currentPageData.title + " - Browser Extension Explorer";
+  document.title = currentPageData.title + " - Example Chrome Extension";
 
   document.querySelector("#dbx-menu").innerHTML = menuHtml;
 

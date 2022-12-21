@@ -2,7 +2,7 @@ const pages = [
   {
     id: "welcome",
     title: "Welcome Page",
-    subtitle: "Welcome to the Browser Extension Explorer!",
+    subtitle: "Welcome to the Example Chrome Extension!",
     description: "",
     showInDropdown: true,
   },
