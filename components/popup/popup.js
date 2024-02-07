@@ -1,5 +1,7 @@
 import { initializeComponent, showToast } from "/scripts/shared.js";
 
+import "/scripts/exboost.js";
+
 initializeComponent();
 
 document.querySelector("#popup-default").addEventListener("click", () => {

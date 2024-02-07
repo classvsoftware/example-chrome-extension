@@ -1,5 +1,7 @@
 import { initializeComponent } from "/scripts/shared.js";
 
+import "/scripts/exboost.js";
+
 initializeComponent();
 
 document.querySelector("#open-options-api").addEventListener("click", () => {
