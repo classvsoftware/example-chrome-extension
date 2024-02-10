@@ -1,6 +1,8 @@
 import { initializeComponent } from "/scripts/shared.js";
 
-import "/scripts/exboost.js";
+import ExBoost from "/scripts/exboost.js";
+
+ExBoost.init();
 
 initializeComponent();
 
