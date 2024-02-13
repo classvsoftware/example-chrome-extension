@@ -14,7 +14,7 @@ var EngineContext;
 })(EngineContext || (EngineContext = {}));
 class ExBoostEngine {
     constructor() {
-        this.version = "1.6.0";
+        this.version = "1.7.0";
         this.sessionId = null;
         this.windowIsDefined = typeof window !== "undefined";
         this.chromeGlobalIsDefined = typeof chrome !== "undefined";
@@ -63,11 +63,15 @@ class ExBoostEngine {
                 break;
         }
     }
+    isSlotFilled(element) {
+        return element.contentDocument.body.innerHTML.length > 0;
+    }
     fillAllExboostIframes(options = {}) {
         const exboostFrames = document.querySelectorAll(`iframe[${EXBOOST_ATTRIBUTE}]`);
         if (options.debug) {
             console.log(`Detected ${exboostFrames.length} ExBoost frames`);
         }
+        const slotIds = new Set();
         for (const exboostFrame of exboostFrames) {
             // Slot ID is to identify the traffic on the server
             const exboostSlotId = exboostFrame.getAttribute(EXBOOST_ATTRIBUTE);
@@ -77,15 +81,20 @@ class ExBoostEngine {
                 }
                 continue;
             }
+            if (slotIds.has(exboostSlotId)) {
+                console.error(`Detected duplicate ExBoost slot id: ${exboostSlotId}`);
+            }
+            slotIds.add(exboostSlotId);
+            const frameWidth = exboostFrame.offsetWidth;
+            const frameHeight = exboostFrame.offsetHeight;
+            const computedStyle = window.getComputedStyle(exboostFrame);
             if (options.debug) {
-                const frameWidth = exboostFrame.offsetWidth;
-                const frameHeight = exboostFrame.offsetHeight;
                 if (frameWidth < 50 || frameHeight < 50) {
                     `Frame ${exboostSlotId} is too small and will not render: ${frameWidth}x${frameHeight}`;
                 }
             }
             // Frame has already been filled
-            if (exboostFrame.contentDocument.body.innerHTML.length > 0) {
+            if (this.isSlotFilled(exboostFrame)) {
                 if (options.debug) {
                     console.log(`Frame ${exboostSlotId} is already filled, skipping`);
                 }
@@ -94,6 +103,14 @@ class ExBoostEngine {
             const message = {
                 exboostSlotId,
                 engineContext: this.engineContext,
+                slotStyle: {
+                    initialSlotWidth: frameWidth.toString(),
+                    initialSlotHeight: frameHeight.toString(),
+                    slotBackgroundColor: computedStyle.backgroundColor,
+                    slotFontColor: computedStyle.color,
+                    slotFontSize: computedStyle.fontSize,
+                    slotFontFamily: computedStyle.fontFamily,
+                },
                 options: {},
             };
             chrome.runtime.sendMessage(message, (response) => {
@@ -120,7 +137,8 @@ class ExBoostEngine {
                 message.engineContext,
                 message.exboostSlotId,
             ].join("/");
-            fetch(`${API_ORIGIN}/${path}?nonce=${Date.now()}`)
+            const params = new URLSearchParams(Object.assign({ version: this.version, publisherExtensionName: chrome.runtime.getManifest().name }, message.slotStyle));
+            fetch(`${API_ORIGIN}/${path}?nonce=${Date.now()}&${params.toString()}`)
                 .then((response) => {
                 if (response.status !== 200) {
                     // Don't fill the slot with an error response
