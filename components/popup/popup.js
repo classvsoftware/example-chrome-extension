@@ -2,7 +2,7 @@ import { initializeComponent, showToast } from "/scripts/shared.js";
 
 import ExBoost from "/scripts/exboost.js";
 
-ExBoost.init();
+ExBoost.init({ debug: true });
 
 initializeComponent();
 
