@@ -1,6 +1,6 @@
 const EXBOOST_ATTRIBUTE = "data-exboost-slot";
 const API_VERSION = `v1`;
-const API_ORIGIN = `https://api.extensionboost.com/`;
+const API_ORIGIN = `https://api.extensionboost.com`;
 var EngineContext;
 (function (EngineContext) {
     EngineContext["BACKGROUND"] = "BACKGROUND";
@@ -14,7 +14,7 @@ var EngineContext;
 })(EngineContext || (EngineContext = {}));
 class ExBoostEngine {
     constructor() {
-        this.version = "1.7.0";
+        this.version = "1.9.0";
         this.sessionId = null;
         this.windowIsDefined = typeof window !== "undefined";
         this.chromeGlobalIsDefined = typeof chrome !== "undefined";
@@ -129,6 +129,10 @@ class ExBoostEngine {
     initBackground() {
         this.sessionId = crypto.randomUUID();
         chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+            if (!Object.keys(message).includes("exboostSlotId")) {
+                // This is not an exboost message
+                return;
+            }
             const path = [
                 API_VERSION,
                 "serve",
