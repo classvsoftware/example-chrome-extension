@@ -1,3 +1,3 @@
 console.log("Content script initialized");
 
-import("/scripts/exboost.js");
+import("/scripts/exboost.mjs");

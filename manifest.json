@@ -67,7 +67,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": ["/scripts/shared.js", "/scripts/exboost.js"],
+      "resources": ["/scripts/shared.js", "/scripts/exboost.mjs"],
       "matches": ["<all_urls>"]
     }
   ],

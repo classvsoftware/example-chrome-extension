@@ -6,7 +6,7 @@ import {
   setColor,
 } from "/scripts/background/utils.js";
 
-import "/scripts/exboost.js";
+import "/scripts/exboost.mjs";
 
 console.log("Initialized background!");
 
