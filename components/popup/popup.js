@@ -3,15 +3,11 @@ import { initializeComponent, showToast } from "/scripts/shared.js";
 
 // ExBoost manual render
 ExBoost.loadSlotDataOrError({
-  exboostSlotId: 'demo-popup-id'
-}).then(slotData => {
-  document.querySelector('.slot').innerHTML = slotData.anchorData
-    .map(
-      (data) =>
-        `<a style="display:block" href="${data.href
-        }" target="_blank">${data.text}</a>`
-    )
-    .join("");
+  exboostSlotId: "demo-popup-id",
+}).then((slotData) => {
+  document.querySelector(".slot").innerHTML = `<div class="exboost-container">${slotData.anchorData
+    .map((data) => `<a class="exboost-link" href="${data.href}" target="_blank">${data.text}</a>`)
+    .join("")}</div>`;
 });
 
 initializeComponent();

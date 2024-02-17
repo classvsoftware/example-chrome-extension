@@ -1,11 +1,31 @@
+.slot,
 .exboost-container {
-  margin-top: 4rem;
   display: flex;
   flex-direction: column;
+}
+
+.slot {
+  margin-top: 4rem;
+  place-items: center;
+}
+
+.exboost-container {
   gap: 1rem;
+  place-items: stretch;
 }
 
 .exboost-link {
-  text-decoration: underline;
-  color: blue;
+  text-decoration: none;
+  color: white;
+  background-color: cornflowerblue;
+  border-radius: 1rem;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.exboost-link:hover {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
 }
