@@ -1,3 +1,11 @@
-iframe {
-  padding-top: 4rem;
+.exboost-container {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.exboost-link {
+  text-decoration: underline;
+  color: blue;
 }

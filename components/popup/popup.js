@@ -1,8 +1,17 @@
+import ExBoost from "/scripts/exboost.mjs";
 import { initializeComponent, showToast } from "/scripts/shared.js";
 
-import ExBoost from "/scripts/exboost.mjs";
-
-ExBoost.init({ debug: true });
+ExBoost.loadSlotDataOrError({
+  exboostSlotId: 'demo-popup-id'
+}).then(slotData => {
+  document.querySelector('.slot').innerHTML = slotData.anchorData
+    .map(
+      (data) =>
+        `<a style="display:block" href="${data.href
+        }" target="_blank">${data.text}</a>`
+    )
+    .join("");
+});
 
 initializeComponent();
 
