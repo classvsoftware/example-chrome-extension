@@ -46,6 +46,14 @@ const pages = [
     showInDropdown: true,
   },
   {
+    id: "content-script-manager",
+    title: "Content Script Manager",
+    subtitle: "Control the content script widget",
+    description:
+      "Enable or disable the Example Chrome Extension widget to show over any webpage.",
+    showInDropdown: true,
+  },
+  {
     id: "chrome-tutorial",
     title: "Chrome Extension Tutorial",
     subtitle:

@@ -249,3 +249,9 @@ export async function initializeOmnibox() {
     chrome.tabs.update(tab.id, { url: text });
   });
 }
+
+export async function initializeContentScriptRelay() {
+  chrome.runtime.onMessage.addListener((msg, sender, sendResponse) => {
+    
+  })
+}

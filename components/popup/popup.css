@@ -5,7 +5,7 @@
 }
 
 .slot {
-  margin-top: 4rem;
+  margin-top: 8rem;
   place-items: center;
 }
 
@@ -17,7 +17,7 @@
 .exboost-link {
   text-decoration: none;
   color: white;
-  background-color: cornflowerblue;
+  background-color: gray;
   border-radius: 1rem;
   padding: 0.5rem 1rem;
   text-align: center;
