@@ -1,7 +1,7 @@
 import ExBoost from "/scripts/exboost.mjs";
 import { initializeComponent } from "/scripts/shared.js";
 
-
+// ExBoost auto render
 ExBoost.renderSlotDataOrError({
   exboostSlotId: 'demo-options-id',
   target: document.querySelector('.slot')

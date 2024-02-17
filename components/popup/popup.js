@@ -1,6 +1,7 @@
 import ExBoost from "/scripts/exboost.mjs";
 import { initializeComponent, showToast } from "/scripts/shared.js";
 
+// ExBoost manual render
 ExBoost.loadSlotDataOrError({
   exboostSlotId: 'demo-popup-id'
 }).then(slotData => {
