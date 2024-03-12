@@ -255,3 +255,7 @@ export async function initializeContentScriptRelay() {
     
   })
 }
+
+export async function initializeSidePanel() {
+  
+}

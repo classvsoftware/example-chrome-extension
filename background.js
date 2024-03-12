@@ -2,6 +2,7 @@ import {
   initializeContextMenus,
   initializeMessageRelay,
   initializeOmnibox,
+  initializeSidePanel,
   openWelcomePage,
   setColor,
 } from "/scripts/background/utils.js";
@@ -32,6 +33,8 @@ try {
   initializeMessageRelay();
 
   initializeOmnibox();
+
+  initializeSidePanel();
 } catch (e) {
   console.error(e);
 }
