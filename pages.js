@@ -203,6 +203,13 @@ const pages = [
       "Extensions can capture screenshots of tabs, MTHML dumps of tabs, tab streams, and desktop streams using the Web Extensions API.",
     showInDropdown: true,
   },
+  {
+    id: "sidepanel",
+    title: "Side Panel",
+    subtitle: "Open, close, and manage the side panel",
+    description: "Use the chrome.sidePanel API to host content in the browser's side panel alongside the main content of a webpage.",
+    showInDropdown: true,
+  },
 ];
 
 export default pages;

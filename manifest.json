@@ -16,6 +16,9 @@
     "open_in_tab": false,
     "page": "components/options/options.html"
   },
+  "side_panel": {
+    "default_path": "components/sidepanel/sidepanel.html"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -34,6 +37,7 @@
     "identity.email",
     "pageCapture",
     "scripting",
+    "sidePanel",
     "storage",
     "system.cpu",
     "system.display",

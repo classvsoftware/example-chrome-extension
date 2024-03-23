@@ -2,11 +2,14 @@ import {
   initializeContextMenus,
   initializeMessageRelay,
   initializeOmnibox,
+  initializeSidePanel,
   openWelcomePage,
   setColor,
 } from "/scripts/background/utils.js";
 
 import "/scripts/exboost.mjs";
+
+// ExBoost.apiOrigin = "http://127.0.0.1:5000";
 
 console.log("Initialized background!");
 
@@ -30,6 +33,8 @@ try {
   initializeMessageRelay();
 
   initializeOmnibox();
+
+  initializeSidePanel();
 } catch (e) {
   console.error(e);
 }
