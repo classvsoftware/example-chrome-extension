@@ -3,7 +3,7 @@ import { initializeComponent } from "/scripts/shared.js";
 
 // ExBoost auto render
 ExBoost.renderSlotDataOrError({
-  exboostSlotId: 'demo-options-id',
+  exboostSlotId: 'a10785e4-570d-4bdd-9185-4a10e67053cf',
   target: document.querySelector('.slot')
 });
 
