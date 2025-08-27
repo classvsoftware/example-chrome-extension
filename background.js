@@ -7,10 +7,6 @@ import {
   setColor,
 } from "/scripts/background/utils.js";
 
-import "/scripts/exboost.mjs";
-
-// ExBoost.apiOrigin = "http://127.0.0.1:5000";
-
 console.log("Initialized background!");
 
 try {

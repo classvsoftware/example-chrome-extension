@@ -143,14 +143,6 @@ const pages = [
     showInDropdown: true,
   },
   {
-    id: "github-oauth",
-    title: "Manual Github OAuth",
-    subtitle: "Authenticate with Github OAuth",
-    description:
-      "The identity API is compatible with any OAuth provider, but it requires passing the client secret. Click the button below to securely authenticate with your Github account.",
-    showInDropdown: true,
-  },
-  {
     id: "api-test",
     title: "Web Extension API",
     subtitle: "View the full list of API methods and properties.",
@@ -209,7 +201,6 @@ const pages = [
     subtitle: "Open, close, and manage the side panel",
     description: "Use the chrome.sidePanel API to host content in the browser's side panel alongside the main content of a webpage.",
     showInDropdown: true,
-  },
-];
+  },];
 
 export default pages;

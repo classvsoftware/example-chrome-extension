@@ -1,9 +1,6 @@
 console.log("Content script initialized");
 
 (async () => {
-  // For this to work, add exboost.mjs to web_accessible_resources in manifest.json
-  const { default: ExBoost } = await import("/scripts/exboost.mjs");
-
   const { CONTENT_SCRIPT_WIDGET_STORAGE_KEY, toggleContentScriptWidget } =
     await import("/scripts/content-scripts/shared.js");
 
@@ -89,45 +86,11 @@ console.log("Content script initialized");
             border-color: #0056b3;
         }
 
-        .slot,
-        .exboost-container {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .slot {
-            margin-top: 8rem;
-            place-items: center;
-        }
-
-        .exboost-container {
-            gap: 1rem;
-            place-items: stretch;
-        }
-
-        .exboost-link {
-            text-decoration: none;
-            color: white;
-            background-color: gray;
-            border-radius: 1rem;
-            padding: 0.5rem 1rem;
-            text-align: center;
-            opacity: 0.8;
-        }
-
-        .exboost-link:hover {
-            text-decoration: none;
-            color: white;
-            opacity: 1;
-        }
-
     </style>
     <div class="widget-content">
         <h1>This is a simple HTML widget.</h1>
         <h2>It is rendered inside a shadow DOM so its styling can be isolated from the host page.</h2>
         <button id="toggle-content-script-widget">TOGGLE CONTENT SCRIPT WIDGET</button>
-        <div class="slot"></div>
-        <a style="text-decoration:underline; color:blue; text-align:center" href="https://extensionboost.com" target="_blank">Get ExBoost</a>
     </div>
 
     `;
@@ -135,12 +98,6 @@ console.log("Content script initialized");
     shadowRoot
       .querySelector("#toggle-content-script-widget")
       .addEventListener("click", toggleContentScriptWidget);
-
-    // ExBoost auto render
-    ExBoost.renderSlotDataOrError({
-      exboostSlotId: "a10785e4-570d-4bdd-9185-4a10e67053cf",
-      target: shadowRoot.querySelector(".slot"),
-    });
   }
 
   async function removeContentScriptWidget() {

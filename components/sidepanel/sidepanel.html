@@ -11,9 +11,14 @@
     <script src="sidepanel.js" type="module" defer></script>
   </head>
   <body>
-    <div id="content">
+    <div id="content" class="p-3">
+      <div class="flex items-center gap-2 mb-3">
+        <label for="windowSelect" class="text-sm">Window:</label>
+        <select id="windowSelect" class="form-select"></select>
+      </div>
+
       <button id="openSidePanel" class="btn btn-secondary">
-        Open Side Panel
+        Open Side Panel in Selected Window
       </button>
     </div>
   </body>

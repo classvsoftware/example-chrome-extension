@@ -30,6 +30,7 @@
   "host_permissions": ["<all_urls>"],
   "permissions": [
     "activeTab",
+    "aiLanguageModelOriginTrial",
     "contextMenus",
     "declarativeNetRequest",
     "desktopCapture",
@@ -73,7 +74,6 @@
     {
       "resources": [
         "/scripts/shared.js",
-        "/scripts/exboost.mjs",
         "/scripts/content-scripts/shared.js"
       ],
       "matches": ["<all_urls>"]
@@ -102,5 +102,8 @@
       "https://www.googleapis.com/auth/userinfo.email",
       "https://www.googleapis.com/auth/userinfo.profile"
     ]
-  }
+  },
+  "trial_tokens": [
+    "Akqb6S6gdmEJ9vxiEV+kDM/3cmUOhmNmTAVVNuU/qLSFYXn9G0SOj8XVRYbNfn/pw+zd56gL5GYREGh/9KvNagYAAAB4eyJvcmlnaW4iOiJjaHJvbWUtZXh0ZW5zaW9uOi8vam5vZmRvZWpmaXBnYWxrbG9waWRwZGVvZmplYmloY2YiLCJmZWF0dXJlIjoiQUlQcm9tcHRBUElGb3JFeHRlbnNpb24iLCJleHBpcnkiOjE3NjA0ODYzOTl9"
+  ]
 }
